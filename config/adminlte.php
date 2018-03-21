@@ -119,6 +119,20 @@ return [
             'url'         => '#',
             'icon'        => 'file',
         ],
+        [
+            'text'    => 'Propostas',
+            'icon'    => 'plus',
+            'submenu' => [
+                [
+                    'text' => 'Compra',
+                    'url'  => '/proposta/compra',
+                ],
+                [
+                    'text' => 'Locacao',
+                    'url'  => '/models',
+                ],
+            ],
+        ],
         'ACCOUNT SETTINGS',
         [
             'text' => 'Perfil',
