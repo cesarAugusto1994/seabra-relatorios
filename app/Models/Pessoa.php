@@ -8,6 +8,8 @@ class Pessoa extends Model
 {
     protected $table = 'pessoas';
 
+    protected $dates = ['created_at', 'criado_em'];
+
     public function fisica()
     {
         return $this->hasOne(PessoaFisica::class, 'pessoa_id');

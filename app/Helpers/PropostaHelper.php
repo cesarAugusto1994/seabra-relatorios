@@ -8,7 +8,7 @@ use App\Models\Proposta;
 class PropostaHelper
 {
 
-    public static function getPropostasPorTipo($tipo = 'Proposta Compra')
+    public static function getPropostasPorTipo($tipo = 'Proposta Compra', $registros = 0)
     {
         $slug = str_slug($tipo);
 
@@ -16,10 +16,14 @@ class PropostaHelper
 
         if(!$propostas) {
 
-          $propostas = Proposta::where('tipo_proposta', $tipo)->get();
+          $propostas = Proposta::where('tipo_proposta', $tipo)->orderByDesc('id')->get();
 
           session()->put($slug, $propostas);
 
+        }
+
+        if($registros) {
+            return session()->get($slug)->take(5);
         }
 
         return session()->get($slug)->count();
