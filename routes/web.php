@@ -27,3 +27,4 @@ Route::resource('cadastro/locatario/pessoa-fisica', 'CadastroLocatarioPfControll
 Route::resource('cadastro/locatario/pessoa-juridica', 'CadastroLocatarioPjController');
 Route::resource('cadastro/fiador/pessoa-fisica', 'CadastroFiadorPfController');
 Route::resource('cadastro/fiador/pessoa-juridica', 'CadastroFiadorPjController');
+Route::resource('cadastro/imovel', 'CadastroImoveisController');

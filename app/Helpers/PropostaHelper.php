@@ -61,4 +61,27 @@ class PropostaHelper
         return array_key_exists((int)$key, $situacoes) ? $situacoes[$key] : $situacoes[0];
     }
 
+    public static function imovelTipo($key)
+    {
+        if(empty($key)) {
+          return 'Não Informada';
+        }
+
+        $situacoes = ['Não Informada', 'Apartamento', 'Casa', 'Cobertura', 'Conjunto Comercial', 'Duplex', 'Flat', 'Loft',
+        'Ponto Comercial', 'Terreno', 'Vaga de Garagem'];
+
+        return array_key_exists((int)$key, $situacoes) ? $situacoes[$key] : $situacoes[0];
+    }
+
+    public static function imovelPretensao($key)
+    {
+        if(empty($key)) {
+          return 'Não Informada';
+        }
+
+        $situacoes = ['Não Informada', 'Venda', 'Locação', 'Venda e Locação'];
+
+        return array_key_exists((int)$key, $situacoes) ? $situacoes[$key] : $situacoes[0];
+    }
+
 }

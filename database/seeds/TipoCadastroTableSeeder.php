@@ -15,7 +15,9 @@ class TipoCadastroTableSeeder extends Seeder
         $itens = [
         'Cadastro Comprador Pessoa Fisica', 'Cadastro Comprador Pessoa Juridica',
         'Cadastro Locatario Pessoa Fisica', 'Cadastro Locatario Pessoa Juridica',
-        'Cadastro Fiador Pessoa Fisica', 'Cadastro Fiador Pessoa Juridica'];
+        'Cadastro Fiador Pessoa Fisica', 'Cadastro Fiador Pessoa Juridica',
+        'Cadastro Imovel'];
+        ];
 
         foreach ($itens as $key => $item) {
             $tipoCadastro = new TipoCadastro();

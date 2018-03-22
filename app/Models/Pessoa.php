@@ -18,6 +18,11 @@ class Pessoa extends Model
         return $this->hasOne(PessoaJuridica::class, 'pessoa_id');
     }
 
+    public function imovel()
+    {
+        return $this->hasOne(Imovel::class, 'pessoa_id');
+    }
+
     public function responsavel()
     {
         return $this->hasOne(Pessoa::class, 'empregador_id');

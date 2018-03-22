@@ -186,6 +186,11 @@ return [
 
             ],
         ],
+        [
+            'text'        => 'Imóveis',
+            'url'         => '/cadastro/imovel',
+            'icon'        => 'home',
+        ],
         'Configurações da Conta',
 
         [
