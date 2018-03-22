@@ -13,7 +13,7 @@ class CreatePessoaInformacoesBancariasTable extends Migration
      */
     public function up()
     {
-        Schema::create('pessoa_informacoes_bancarias', function (Blueprint $table) {
+        Schema::create('pessoas_informacoes_bancarias', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('pessoa_id')->nullable();
             $table->string('banco');
@@ -35,6 +35,6 @@ class CreatePessoaInformacoesBancariasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pessoa_informacoes_bancarias');
+        Schema::dropIfExists('pessoas_informacoes_bancarias');
     }
 }

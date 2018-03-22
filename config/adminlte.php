@@ -108,16 +108,16 @@ return [
     */
 
     'menu' => [
-        'MAIN NAVIGATION',
+        'Navegação Principal',
         [
             'text' => 'Blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Home',
-            'url'         => '#',
-            'icon'        => 'file',
+            'text'        => 'Principal',
+            'url'         => '/',
+            'icon'        => 'home',
         ],
         [
             'text'    => 'Propostas',
@@ -131,9 +131,62 @@ return [
                     'text' => 'Locacao',
                     'url'  => '/proposta/locacao',
                 ],
+                [
+                    'text' => 'Lançamentos',
+                    'url'  => '/proposta/lancamento',
+                ],
             ],
         ],
-        'ACCOUNT SETTINGS',
+        [
+            'text'    => 'Cadastros',
+            'icon'    => 'plus',
+            'submenu' => [
+                [
+                    'text' => 'Comprador',
+                    'submenu' => [
+                        [
+                            'text' => 'Pessoa Fisica',
+                            'url'  => '/cadastro/pessoa-fisica',
+                        ],
+                        [
+                            'text' => 'Pessoa Juridica',
+                            'url'  => '/cadastro/pessoa-juridica',
+                        ],
+                    ],
+                ],
+
+                [
+                    'text' => 'Locatario',
+                    'submenu' => [
+                        [
+                            'text' => 'Pessoa Fisica',
+                            'url'  => '/cadastro/locatario/pessoa-fisica',
+                        ],
+                        [
+                            'text' => 'Pessoa Juridica',
+                            'url'  => '/cadastro/locatario/pessoa-juridica',
+                        ],
+                    ],
+                ],
+
+                [
+                    'text' => 'Fiador',
+                    'submenu' => [
+                        [
+                            'text' => 'Pessoa Fisica',
+                            'url'  => '/cadastro/fiador/pessoa-fisica',
+                        ],
+                        [
+                            'text' => 'Pessoa Juridica',
+                            'url'  => '/cadastro/fiador/pessoa-juridica',
+                        ],
+                    ],
+                ],
+
+
+            ],
+        ],
+        'Configurações da Conta',
 
         [
             'text' => 'Trocar Senha',

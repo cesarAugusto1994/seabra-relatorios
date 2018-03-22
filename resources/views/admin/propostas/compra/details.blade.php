@@ -245,7 +245,17 @@
                       </tr>
 
                       <tr>
-                        <th>Estado Civil</th>
+                        <th>Cidade</th>
+                        <td>{{ $proposta->imovel->cidade }}</td>
+                      </tr>
+
+                      <tr>
+                        <th>Estado</th>
+                        <td>{{ $proposta->imovel->estado }}</td>
+                      </tr>
+
+                      <tr>
+                        <th>Unidade</th>
                         <td>{{ $proposta->imovel->unidade }}</td>
                       </tr>
 

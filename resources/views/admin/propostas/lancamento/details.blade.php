@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Seabra - Propostas Locação')
+@section('title', 'Seabra - Propostas Lançamento')
 
 @section('content_header')
-    <h1>Propostas Locação N. {{ $proposta->id }}</h1>
+    <h1>Propostas Lançamento N. {{ $proposta->id }}</h1>
 @stop
 
 @section('content')
@@ -12,7 +12,7 @@
   <div class="box-header with-border">
     <h3 class="box-title">Detalhes</h3>
     <div class="box-tools pull-right">
-      <a class="btn btn-google btn-xs" href="{{ url('/proposta/locacao') }}">Voltar</a>
+      <a class="btn btn-google btn-xs" href="{{ url('/proposta/lancamento') }}">Voltar</a>
     </div>
   </div>
   <div class="box-body">
@@ -90,7 +90,7 @@
 
                       <tr>
                         <th>Estado Civil</th>
-                        <td>{{ $proposta->pessoa->fisica->estado_civil }}</td>
+                        <td>{{ App\Helpers\PropostaHelper::estadoCivil($proposta->pessoa->fisica->estado_civil) }}</td>
                       </tr>
 
                       <tr>
@@ -121,6 +121,31 @@
                       <tr>
                         <th>Profissao</th>
                         <td>{{ $proposta->pessoa->fisica->profissao }}</td>
+                      </tr>
+
+                      <tr>
+                        <th>Endereço</th>
+                        <td>{{ $proposta->pessoa->endereco->logradouro }}</td>
+                      </tr>
+
+                      <tr>
+                        <th>Bairro</th>
+                        <td>{{ $proposta->pessoa->endereco->bairro }}</td>
+                      </tr>
+
+                      <tr>
+                        <th>CEP</th>
+                        <td>{{ $proposta->pessoa->endereco->cep }}</td>
+                      </tr>
+
+                      <tr>
+                        <th>Cidade</th>
+                        <td>{{ $proposta->pessoa->endereco->cidade }}</td>
+                      </tr>
+
+                      <tr>
+                        <th>Estado</th>
+                        <td>{{ App\Helpers\PropostaHelper::estado($proposta->pessoa->endereco->estado) }}</td>
                       </tr>
 
                       </thead>
@@ -167,8 +192,13 @@
                       </tr>
 
                       <tr>
+                        <th>Sexo</th>
+                        <td>{{ $proposta->pessoa->conjuge->sexo ? 'Feminino' : 'Masculino' }}</td>
+                      </tr>
+
+                      <tr>
                         <th>Estado Civil</th>
-                        <td>{{ $proposta->pessoa->conjuge->estado_civil }}</td>
+                        <td>{{ App\Helpers\PropostaHelper::estadoCivil($proposta->pessoa->conjuge->estado_civil) }}</td>
                       </tr>
 
                       <tr>
@@ -201,6 +231,36 @@
                         <td>{{ $proposta->pessoa->conjuge->profissao }}</td>
                       </tr>
 
+                      <tr>
+                        <th>Endereço</th>
+                        <td>{{ $proposta->pessoa->conjuge->residencial }}</td>
+                      </tr>
+
+                      <tr>
+                        <th>Complemento</th>
+                        <td>{{ $proposta->pessoa->conjuge->complemento }}</td>
+                      </tr>
+
+                      <tr>
+                        <th>Bairro</th>
+                        <td>{{ $proposta->pessoa->conjuge->bairro }}</td>
+                      </tr>
+
+                      <tr>
+                        <th>CEP</th>
+                        <td>{{ $proposta->pessoa->conjuge->cep }}</td>
+                      </tr>
+
+                      <tr>
+                        <th>Cidade</th>
+                        <td>{{ $proposta->pessoa->conjuge->cidade }}</td>
+                      </tr>
+
+                      <tr>
+                        <th>Estado</th>
+                          <td>{{ App\Helpers\PropostaHelper::estado($proposta->pessoa->conjuge->estado) }}</td>
+                      </tr>
+
                       </thead>
 
                     </table>
@@ -225,6 +285,11 @@
                       </tr>
 
                       <tr>
+                        <th>Empresa</th>
+                        <td>{{ $proposta->pessoa->dadosComerciais->empregador }}</td>
+                      </tr>
+
+                      <tr>
                         <th>Endereço</th>
                         <td>{{ $proposta->pessoa->dadosComerciais->endereco }}</td>
                       </tr>
@@ -246,7 +311,7 @@
 
                       <tr>
                         <th>Estado</th>
-                        <td>{{ $proposta->pessoa->dadosComerciais->estado }}</td>
+                        <td>{{ App\Helpers\PropostaHelper::estado($proposta->pessoa->dadosComerciais->estado) }}</td>
                       </tr>
 
                       <tr>
@@ -365,53 +430,57 @@
 
                       <tr>
                         <th>ID</th>
-                        <td>{{ $proposta->imovel->locacao->id }}</td>
+                        <td>{{ $proposta->imovel->pagamento->id }}</td>
                       </tr>
 
                       <tr>
-                        <th>Aluguel</th>
-                        <td>R$ {{ number_format($proposta->imovel->locacao->valor_aluguel, 2, ',', '.') }}</td>
+                        <th>Valor</th>
+                        <td>R$ {{ number_format($proposta->imovel->pagamento->preco_total, 2, ',', '.') }}</td>
                       </tr>
 
                       <tr>
-                        <th>Inicio Vigência</th>
-                        <td>{{ $proposta->imovel->locacao->inicio_vigencia }}</td>
+                        <th>Recursos Próprios</th>
+                        <td>R$ {{ number_format($proposta->imovel->pagamento->pagamento_recursos_proprios, 2, ',', '.') }}</td>
                       </tr>
 
                       <tr>
-                        <th>Prazo Contrato</th>
-                        <td>{{ $proposta->imovel->locacao->prazo_contrato }}</td>
+                        <th>Financiamento</th>
+                        <td>R$ {{ number_format($proposta->imovel->pagamento->pagamento_financiamento, 2, ',', '.') }}</td>
                       </tr>
 
                       <tr>
-                        <th>Indice Correção</th>
-                        <td>{{ $proposta->imovel->locacao->indice_correcao }}</td>
+                        <th>Correção Monetária</th>
+                        <td>{{ $proposta->imovel->pagamento->correcao_monetaria }}</td>
                       </tr>
 
                       <tr>
-                        <th>Garantias</th>
-                        <td>{{ $proposta->imovel->locacao->garantias }}</td>
+                        <th>Correção Monetária Valor</th>
+                        <td>R$ {{ number_format($proposta->imovel->pagamento->correcao_monetaria_valor, 2, ',', '.') }}</td>
                       </tr>
 
                       <tr>
-                        <th>Nome Fiador</th>
-                        <td>{{ $proposta->imovel->locacao->nome_fiador }}</td>
+                        <th>Incidência Juros</th>
+                        <td>{{ $proposta->imovel->pagamento->incidencia_juros ? 'Sim' : 'Não' }}</td>
                       </tr>
 
                       <tr>
-                        <th>Grau Parentesco</th>
-                        <td>{{ $proposta->imovel->locacao->grau_parentesco }}</td>
+                        <th>Tipo Juros</th>
+                        <td>{{ $proposta->imovel->pagamento->tipo_juros }}</td>
                       </tr>
 
                       <tr>
-                        <th>Imoveis Fiador</th>
-                        <td>{{ $proposta->imovel->locacao->imoveis_fiador }}</td>
+                        <th>usa FGTS</th>
+                        <td>{{ $proposta->imovel->pagamento->usa_fgts ? 'Sim' : 'Não' }}</td>
                       </tr>
 
+                      <tr>
+                        <th>FGTS Valor</th>
+                        <td>R$ {{ number_format($proposta->imovel->pagamento->fgts_valo, 2, ',', '.') }}</td>
+                      </tr>
 
                       <tr>
-                        <th>Observacoes</th>
-                        <td>{{ $proposta->imovel->locacao->observacoes }}</td>
+                        <th>Descrição</th>
+                        <td>{{ $proposta->imovel->pagamento->descricao }}</td>
                       </tr>
 
                       </thead>
