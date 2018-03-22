@@ -17,4 +17,9 @@ class Pessoa extends Model
     {
         return $this->hasOne(PessoaDadosConjuge::class, 'pessoa_id');
     }
+
+    public function dadosComerciais()
+    {
+        return $this->hasOne(PessoaDadosComerciais::class, 'pessoa_id');
+    }
 }

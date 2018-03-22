@@ -129,16 +129,12 @@ return [
                 ],
                 [
                     'text' => 'Locacao',
-                    'url'  => '/models',
+                    'url'  => '/proposta/locacao',
                 ],
             ],
         ],
         'ACCOUNT SETTINGS',
-        [
-            'text' => 'Perfil',
-            'url'  => '#',
-            'icon' => 'user',
-        ],
+
         [
             'text' => 'Trocar Senha',
             'url'  => '#',

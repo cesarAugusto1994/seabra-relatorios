@@ -35,9 +35,9 @@
         <th>Cidade</th>
         <th>UF</th>
 
-        <th>Recursos Proprios</th>
-        <th>Financiado</th>
-        <th>Total</th>
+        <th>Aluguel</th>
+        <th>Data Inicio</th>
+        <th>Periodo</th>
 
         <th>Opções</th>
 
@@ -56,10 +56,10 @@
             <td>{{ $proposta->imovel->cep }}</td>
             <td>{{ $proposta->imovel->cidade }}</td>
             <td>{{ $proposta->imovel->estado }}</td>
-            <td>R$ {{ number_format($proposta->imovel->pagamento->pagamento_recursos_proprios, 2, ',', '.') }}</td>
-            <td>R$ {{ number_format($proposta->imovel->pagamento->pagamento_financiamento, 2, ',', '.') }}</td>
-            <td>R$ {{ number_format($proposta->imovel->pagamento->preco_total, 2, ',', '.') }}</td>
-            <td><a href="{{ url('/proposta/compra/' . $proposta->id) }}" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> Ver</a></td>
+            <td>R$ {{ number_format($proposta->imovel->locacao->valor_aluguel, 2, ',', '.') }}</td>
+            <td>{{ $proposta->imovel->locacao->inicio_vigencia }}</td>
+            <td>{{ $proposta->imovel->locacao->prazo_contrato }}</td>
+            <td><a href="{{ url('/proposta/locacao/' . $proposta->id) }}" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> Ver</a></td>
           </tr>
         @endforeach
       </tbody>

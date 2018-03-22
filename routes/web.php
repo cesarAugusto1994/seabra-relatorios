@@ -19,3 +19,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('propostas/pessoa-fisica', 'PropostaPessoaFisicaController');
 Route::resource('propostas/pessoa-juridica', 'PropostaPessoaJuridicaController');
 Route::resource('proposta/compra', 'PropostaCompraController');
+Route::resource('proposta/locacao', 'PropostaLocacaoController');

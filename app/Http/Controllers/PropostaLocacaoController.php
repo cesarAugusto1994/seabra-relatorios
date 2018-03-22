@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Proposta;
-use Route;
 
-class PropostaCompraController extends Controller
+class PropostaLocacaoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,9 @@ class PropostaCompraController extends Controller
      */
     public function index()
     {
-        $propostas = Proposta::where('tipo_proposta', 'Proposta Compra')->paginate();
+        $propostas = Proposta::where('tipo_proposta', 'Proposta Locacao')->paginate();
 
-        return view('admin.propostas.compra.index', compact('propostas'));
+        return view('admin.propostas.locacao.index', compact('propostas'));
     }
 
     /**
@@ -51,7 +50,7 @@ class PropostaCompraController extends Controller
     {
         $proposta = Proposta::find($id);
 
-        return view('admin.propostas.compra.details', compact('proposta'));
+        return view('admin.propostas.locacao.details', compact('proposta'));
     }
 
     /**

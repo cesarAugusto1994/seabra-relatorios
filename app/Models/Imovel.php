@@ -12,4 +12,9 @@ class Imovel extends Model
     {
         return $this->hasOne(ImovelCondicoesPagamento::class, 'imovel_id');
     }
+
+    public function locacao()
+    {
+        return $this->hasOne(ImovelLocacao::class, 'imovel_id');
+    }
 }
