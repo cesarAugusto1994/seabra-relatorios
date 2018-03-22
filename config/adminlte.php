@@ -134,6 +134,7 @@ return [
                 [
                     'text' => 'Lançamentos',
                     'url'  => '/proposta/lancamento',
+                    'icon'    => 'star',
                 ],
             ],
         ],
@@ -143,6 +144,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Comprador',
+                    'icon' => 'id-badge',
                     'submenu' => [
                         [
                             'text' => 'Pessoa Fisica',
@@ -157,6 +159,7 @@ return [
 
                 [
                     'text' => 'Locatario',
+                    'icon' => 'id-card',
                     'submenu' => [
                         [
                             'text' => 'Pessoa Fisica',
@@ -171,6 +174,7 @@ return [
 
                 [
                     'text' => 'Fiador',
+                    'icon' => 'id-card-o',
                     'submenu' => [
                         [
                             'text' => 'Pessoa Fisica',
@@ -189,12 +193,12 @@ return [
         [
             'text'        => 'Imóveis',
             'url'         => '/cadastro/imovel',
-            'icon'        => 'home',
+            'icon'        => 'building',
         ],
         [
             'text'        => 'Encomendas',
             'url'         => '/cadastro/encomendar-imovel',
-            'icon'        => 'home',
+            'icon'        => 'map-marker',
         ],
         'Configurações da Conta',
 
