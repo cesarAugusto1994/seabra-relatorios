@@ -12,11 +12,13 @@ class TipoCadastroTableSeeder extends Seeder
      */
     public function run()
     {
+        \DB::statement('truncate tipo_cadastro');
+
         $itens = [
         'Cadastro Comprador Pessoa Fisica', 'Cadastro Comprador Pessoa Juridica',
         'Cadastro Locatario Pessoa Fisica', 'Cadastro Locatario Pessoa Juridica',
         'Cadastro Fiador Pessoa Fisica', 'Cadastro Fiador Pessoa Juridica',
-        'Cadastro Imovel'];
+        'Cadastro Imovel', 'Encomendar Imovel'
         ];
 
         foreach ($itens as $key => $item) {

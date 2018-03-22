@@ -36,6 +36,7 @@ class CreateImovelsTable extends Migration
             $table->float('faixa_preco', 12, 2)->nullable();
             $table->float('valor_entrada', 12, 2)->nullable();
             $table->float('valor_financiar', 12, 2)->nullable();
+            $table->integer('prazo_financiamento')->nullable();
             $table->boolean('usa_fgts')->default(false);
             $table->float('valor_fgts', 12, 2)->nullable();
             $table->float('condominio', 12, 2)->nullable();

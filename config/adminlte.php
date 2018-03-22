@@ -191,6 +191,11 @@ return [
             'url'         => '/cadastro/imovel',
             'icon'        => 'home',
         ],
+        [
+            'text'        => 'Encomendas',
+            'url'         => '/cadastro/encomendar-imovel',
+            'icon'        => 'home',
+        ],
         'Configurações da Conta',
 
         [
