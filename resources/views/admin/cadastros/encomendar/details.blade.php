@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Seabra - Cadastro Imóvel')
+@section('title', 'Seabra - Encomenda de Imóvel')
 
 @section('content_header')
-    <h1>Cadastro Imóvel N. {{ $pessoa->imovel->id }}</h1>
+    <h1>Encomenda de Imóvel N. {{ $pessoa->imovel->id }}</h1>
 @stop
 
 @section('content')
