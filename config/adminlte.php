@@ -200,8 +200,27 @@ return [
             'url'         => '/cadastro/encomendar-imovel',
             'icon'        => 'map-marker',
         ],
+        [
+            'text'        => 'Fale Conosco',
+            'url'         => '/fale-conosco',
+            'icon'        => 'comments-o',
+        ],
+        [
+            'text'        => 'Solicitação de Contato',
+            'url'         => '/solicitar-contato',
+            'icon'        => 'phone',
+        ],
+        [
+            'text'        => 'Solicitação de Informacoes',
+            'url'         => '/solicitar-informacoes',
+            'icon'        => 'comments-o',
+        ],
+        [
+            'text'        => 'Curriculos',
+            'url'         => '/curriculo',
+            'icon'        => 'user',
+        ],
         'Configurações da Conta',
-
         [
             'text' => 'Trocar Senha',
             'url'  => '#',

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSolicitarInformacoesTable extends Migration
+class CreateSolicitarContatoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,15 @@ class CreateSolicitarInformacoesTable extends Migration
      */
     public function up()
     {
-        Schema::create('solicitar_informacoes', function (Blueprint $table) {
+        Schema::create('solicitar_contato', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome')->nullable();
             $table->string('email')->nullable();
             $table->string('telefone')->nullable();
-            $table->text('duvida')->nullable();
+            $table->string('periodo')->nullable();
+            $table->text('mensagem')->nullable();
             $table->string('imovel')->nullable();
-            $table->string('qtde_imoveis')->nullable();
             $table->string('url')->nullable();
-            $table->integer('imovel_1')->nullable();
-            $table->integer('imovel_2')->nullable();
-            $table->integer('imovel_3')->nullable();
-            $table->integer('imovel_4')->nullable();
-            $table->integer('imovel_5')->nullable();
-            $table->integer('imovel_6')->nullable();
             $table->string('formulario_origem')->nullable();
             $table->timestamps();
         });
@@ -40,6 +34,6 @@ class CreateSolicitarInformacoesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('solicitar_informacoes');
+        Schema::dropIfExists('solicitar_contato');
     }
 }

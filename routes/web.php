@@ -29,3 +29,7 @@ Route::resource('cadastro/fiador/pessoa-fisica', 'CadastroFiadorPfController');
 Route::resource('cadastro/fiador/pessoa-juridica', 'CadastroFiadorPjController');
 Route::resource('cadastro/imovel', 'CadastroImoveisController');
 Route::resource('cadastro/encomendar-imovel', 'EncomendarImovelController');
+Route::resource('curriculo', 'CurriculoController');
+Route::resource('fale-conosco', 'FaleConoscoController');
+Route::resource('solicitar-informacoes', 'SolicitarInformacoesController');
+Route::resource('solicitar-contato', 'SolicitarContatoController');
