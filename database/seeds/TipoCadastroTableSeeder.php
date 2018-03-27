@@ -18,7 +18,7 @@ class TipoCadastroTableSeeder extends Seeder
         'Cadastro Comprador Pessoa Fisica', 'Cadastro Comprador Pessoa Juridica',
         'Cadastro Locatario Pessoa Fisica', 'Cadastro Locatario Pessoa Juridica',
         'Cadastro Fiador Pessoa Fisica', 'Cadastro Fiador Pessoa Juridica',
-        'Cadastro Imovel', 'Encomendar Imovel'
+        'Cadastro Imovel', 'Encomendar Imovel', 'Analise de Credito'
         ];
 
         foreach ($itens as $key => $item) {

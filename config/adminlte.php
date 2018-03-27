@@ -216,6 +216,11 @@ return [
             'icon'        => 'comments-o',
         ],
         [
+            'text'        => 'Análise de Crédito',
+            'url'         => '/analise-credito',
+            'icon'        => 'money',
+        ],
+        [
             'text'        => 'Curriculos',
             'url'         => '/curriculo',
             'icon'        => 'user',

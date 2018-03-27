@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePessoaVeiculosTable extends Migration
+class CreatePessoaImoveisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,16 @@ class CreatePessoaVeiculosTable extends Migration
      */
     public function up()
     {
-        Schema::create('pessoas_veiculos', function (Blueprint $table) {
+        Schema::create('pessoa_imoveis', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('pessoa_id')->nullable();
-            $table->string('modelo')->nullable();
-            $table->string('ano')->nullable();
+            $table->string('cidade')->nullable();
+            $table->string('bairro')->nullable();
             $table->boolean('quitado')->default(true);
             $table->float('valor_prestacao', 12, 2)->nullable();
+            $table->float('valor_estimado', 12, 2)->nullable();
             $table->integer('prazo_restante')->nullable();
             $table->boolean('ativo')->default(true);
-            $table->datetime('criado_em');
-            $table->datetime('atualizado_em')->nullable();
-            $table->datetime('inativado_em')->nullable();
             $table->timestamps();
         });
     }
@@ -36,6 +34,6 @@ class CreatePessoaVeiculosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pessoas_veiculos');
+        Schema::dropIfExists('pessoa_imoveis');
     }
 }

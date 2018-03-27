@@ -33,3 +33,4 @@ Route::resource('curriculo', 'CurriculoController');
 Route::resource('fale-conosco', 'FaleConoscoController');
 Route::resource('solicitar-informacoes', 'SolicitarInformacoesController');
 Route::resource('solicitar-contato', 'SolicitarContatoController');
+Route::resource('analise-credito', 'AnaliseController');

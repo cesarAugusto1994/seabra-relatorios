@@ -23,7 +23,7 @@ class CreatePessoaDadosComerciaisTable extends Migration
             $table->string('tempo_funcao_meses')->nullable();
             $table->float('salario', 12, 2)->nullable();
             $table->string('tempo_trabalho')->nullable();
-            $table->integer('vinculo_empregaticio_id')->nullable();
+            $table->string('vinculo_empregaticio')->nullable();
             $table->float('fonte_principal_renda', 12, 2)->nullable();
             $table->float('renda_mensal_comprovada', 12, 2)->nullable();
             $table->float('outras_rendas', 12, 2)->nullable();

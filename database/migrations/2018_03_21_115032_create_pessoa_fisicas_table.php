@@ -22,8 +22,8 @@ class CreatePessoaFisicasTable extends Migration
             $table->string('regime_casamento')->nullable();
             $table->boolean('convive_miritalmente')->default(false);
             $table->string('convive_miritalmente_desde')->nullable();
-            $table->datetime('nascimento')->nullable();
-            $table->integer('grau_instrucao_id')->nullable();
+            $table->string('nascimento')->nullable();
+            $table->string('grau_instrucao')->nullable();
             $table->string('nacionalidade')->nullable();
             $table->string('cpf')->nullable();
             $table->string('rg')->nullable();
