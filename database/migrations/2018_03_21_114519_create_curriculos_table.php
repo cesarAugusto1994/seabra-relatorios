@@ -33,8 +33,6 @@ class CreateCurriculosTable extends Migration
             $table->string('conhecimentos_informatica')->nullable();
             $table->boolean('experiencia_televendas')->default(false);
             $table->text('experiencias_profissionais')->nullable();
-
-
             $table->timestamps();
         });
     }
