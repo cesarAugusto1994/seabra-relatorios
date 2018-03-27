@@ -20,6 +20,31 @@ class Pessoa extends Model
         return $this->hasOne(PessoaJuridica::class, 'pessoa_id');
     }
 
+    public function financeiro()
+    {
+        return $this->hasOne(PessoaDadosFinanceiros::class, 'pessoa_id');
+    }
+
+    public function sociedade()
+    {
+        return $this->hasOne(PessoaParticipacoesSocietarias::class, 'pessoa_id');
+    }
+
+    public function aplicacoes()
+    {
+        return $this->hasOne(PessoaAplicacoesFinanceiras::class, 'pessoa_id');
+    }
+
+    public function veiculo()
+    {
+        return $this->hasOne(PessoaVeiculos::class, 'pessoa_id');
+    }
+
+    public function imovelSimples()
+    {
+        return $this->hasOne(PessoaImoveis::class, 'pessoa_id');
+    }
+
     public function contato()
     {
         return $this->hasOne(PessoaContato::class, 'pessoa_id');
