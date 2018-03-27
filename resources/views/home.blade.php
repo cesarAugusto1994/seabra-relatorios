@@ -42,7 +42,7 @@
               </table>
               <div class="text-center">
                 @if(App\Helpers\PropostaHelper::getPropostasPorTipo('Proposta Compra') > 4)
-                  <a class="btn btn-default btn-sm">Ver Mais</a>
+                  <a class="btn btn-default btn-sm" href="{{ url('/proposta/compra') }}">Ver Mais</a>
                 @endif
               </div>
             </div>
