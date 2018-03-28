@@ -201,7 +201,7 @@ return [
             'icon'        => 'map-marker',
         ],
         [
-            'text'        => 'Fale Conosco',
+            'text'        => 'E-mail',
             'url'         => '/fale-conosco',
             'icon'        => 'comments-o',
         ],
