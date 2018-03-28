@@ -191,7 +191,7 @@ return [
             ],
         ],
         [
-            'text'        => 'Imóveis',
+            'text'        => 'Cadastre seu Imóvel',
             'url'         => '/cadastro/imovel',
             'icon'        => 'building',
         ],
