@@ -139,7 +139,7 @@ return [
             ],
         ],
         [
-            'text'    => 'Cadastros',
+            'text'    => 'Fichas Cadastrais',
             'icon'    => 'plus',
             'submenu' => [
                 [
