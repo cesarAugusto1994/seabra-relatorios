@@ -196,7 +196,7 @@ return [
             'icon'        => 'building',
         ],
         [
-            'text'        => 'Encomendas',
+            'text'        => 'Encomende seu Imóvel',
             'url'         => '/cadastro/encomendar-imovel',
             'icon'        => 'map-marker',
         ],
