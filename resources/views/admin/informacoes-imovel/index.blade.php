@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Seabra - Solicitação de Informações Imóvel')
+@section('title', 'Seabra - Imóveis Contato')
 
 @section('content_header')
-    <h1>Solicitação de Informações Imóvel</h1>
+    <h1>Imóveis Contato</h1>
 @stop
 
 @section('content')

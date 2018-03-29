@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Seabra - Ofertas E-mail')
+@section('title', 'Seabra - Indique um Amigo')
 
 @section('content_header')
-    <h1>Ofertas E-mail</h1>
+    <h1>Indique um Amigo</h1>
 @stop
 
 @section('content')
@@ -19,9 +19,9 @@
       <tr>
         <th>Nome</th>
         <th>Email</th>
-        <th>Telefone</th>
-        <th>Dúvida</th>
-        <th>Imóveis</th>
+        <th>Mensagem</th>
+        <th>Imovel</th>
+        <th>Email Amigos</th>
         <th>Formulário Origem</th>
       </tr>
       </thead>
@@ -30,16 +30,9 @@
           <tr>
             <td>{{ $contato->nome }}</td>
             <td>{{ $contato->email }}</td>
-            <td>{{ $contato->telefone }}</td>
-            <td>{{ $contato->duvida }}</td>
-            <td>{{ $contato->imovel }}
-              @if($contato->imovel_1){{ $contato->imovel_1 }}, @endif
-              @if($contato->imovel_2){{ $contato->imovel_2 }}, @endif
-              @if($contato->imovel_3){{ $contato->imovel_3 }}, @endif
-              @if($contato->imovel_4){{ $contato->imovel_4 }}, @endif
-              @if($contato->imovel_5){{ $contato->imovel_5 }}, @endif
-              @if($contato->imovel_6){{ $contato->imovel_6 }} @endif
-            </td>
+            <td>{{ $contato->mensagem }}</td>
+            <td>{{ $contato->imovel_nome }}</td>
+            <td>{{ str_replace(' ', ',', $contato->email_amigo) }}</td>
             <td>{{ $contato->formulario_origem }}</td>
           </tr>
         @endforeach

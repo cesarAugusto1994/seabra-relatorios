@@ -227,6 +227,11 @@ return [
             'url'         => '/curriculo',
             'icon'        => 'user',
         ],
+        [
+            'text'        => 'Indique um Amigo',
+            'url'         => '/compartilhar',
+            'icon'        => 'share',
+        ],
         'Configurações da Conta',
         [
             'text' => 'Trocar Senha',

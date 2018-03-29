@@ -319,6 +319,7 @@ class ComposerStaticInitbeea7af1cfa911bf323f69d6ccedaf23
     );
 
     public static $classMap = array (
+        'App\\Compartilhar' => __DIR__ . '/../..' . '/app/Compartilhar.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Helpers\\Helper' => __DIR__ . '/../..' . '/app/Helpers/Helper.php',
@@ -347,6 +348,7 @@ class ComposerStaticInitbeea7af1cfa911bf323f69d6ccedaf23
         'App\\Http\\Controllers\\PropostaPessoaJuridicaController' => __DIR__ . '/../..' . '/app/Http/Controllers/PropostaPessoaJuridicaController.php',
         'App\\Http\\Controllers\\SolicitarContatoController' => __DIR__ . '/../..' . '/app/Http/Controllers/SolicitarContatoController.php',
         'App\\Http\\Controllers\\SolicitarInformacoesController' => __DIR__ . '/../..' . '/app/Http/Controllers/SolicitarInformacoesController.php',
+        'App\\Http\\Controllers\\SolicitarInformacoesImovelController' => __DIR__ . '/../..' . '/app/Http/Controllers/SolicitarInformacoesImovelController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
@@ -378,6 +380,7 @@ class ComposerStaticInitbeea7af1cfa911bf323f69d6ccedaf23
         'App\\Models\\PessoaVeiculos' => __DIR__ . '/../..' . '/app/Models/PessoaVeiculos.php',
         'App\\Models\\Pretensao' => __DIR__ . '/../..' . '/app/Models/Pretensao.php',
         'App\\Models\\Proposta' => __DIR__ . '/../..' . '/app/Models/Proposta.php',
+        'App\\Models\\SolicitacaoInformacoesImovel' => __DIR__ . '/../..' . '/app/Models/SolicitacaoInformacoesImovel.php',
         'App\\Models\\SolicitarContato' => __DIR__ . '/../..' . '/app/Models/SolicitarContato.php',
         'App\\Models\\SolicitarInformacoes' => __DIR__ . '/../..' . '/app/Models/SolicitarInformacoes.php',
         'App\\Models\\TipoCadastro' => __DIR__ . '/../..' . '/app/Models/TipoCadastro.php',
@@ -390,7 +393,6 @@ class ComposerStaticInitbeea7af1cfa911bf323f69d6ccedaf23
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
-        'App\\SolicitacaoInformacoesImovel' => __DIR__ . '/../..' . '/app/SolicitacaoInformacoesImovel.php',
         'App\\TipoImovel' => __DIR__ . '/../..' . '/app/Models/TipoImovel.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',

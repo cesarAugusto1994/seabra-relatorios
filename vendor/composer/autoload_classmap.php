@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Compartilhar' => $baseDir . '/app/Compartilhar.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Helpers\\Helper' => $baseDir . '/app/Helpers/Helper.php',
@@ -34,6 +35,7 @@ return array(
     'App\\Http\\Controllers\\PropostaPessoaJuridicaController' => $baseDir . '/app/Http/Controllers/PropostaPessoaJuridicaController.php',
     'App\\Http\\Controllers\\SolicitarContatoController' => $baseDir . '/app/Http/Controllers/SolicitarContatoController.php',
     'App\\Http\\Controllers\\SolicitarInformacoesController' => $baseDir . '/app/Http/Controllers/SolicitarInformacoesController.php',
+    'App\\Http\\Controllers\\SolicitarInformacoesImovelController' => $baseDir . '/app/Http/Controllers/SolicitarInformacoesImovelController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
     'App\\Http\\Middleware\\RedirectIfAuthenticated' => $baseDir . '/app/Http/Middleware/RedirectIfAuthenticated.php',
@@ -65,6 +67,7 @@ return array(
     'App\\Models\\PessoaVeiculos' => $baseDir . '/app/Models/PessoaVeiculos.php',
     'App\\Models\\Pretensao' => $baseDir . '/app/Models/Pretensao.php',
     'App\\Models\\Proposta' => $baseDir . '/app/Models/Proposta.php',
+    'App\\Models\\SolicitacaoInformacoesImovel' => $baseDir . '/app/Models/SolicitacaoInformacoesImovel.php',
     'App\\Models\\SolicitarContato' => $baseDir . '/app/Models/SolicitarContato.php',
     'App\\Models\\SolicitarInformacoes' => $baseDir . '/app/Models/SolicitarInformacoes.php',
     'App\\Models\\TipoCadastro' => $baseDir . '/app/Models/TipoCadastro.php',
@@ -77,7 +80,6 @@ return array(
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
-    'App\\SolicitacaoInformacoesImovel' => $baseDir . '/app/SolicitacaoInformacoesImovel.php',
     'App\\TipoImovel' => $baseDir . '/app/Models/TipoImovel.php',
     'App\\User' => $baseDir . '/app/User.php',
     'ArithmeticError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',

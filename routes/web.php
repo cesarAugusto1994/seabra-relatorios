@@ -15,23 +15,28 @@ Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('propostas/pessoa-fisica', 'PropostaPessoaFisicaController');
-Route::resource('propostas/pessoa-juridica', 'PropostaPessoaJuridicaController');
-Route::resource('proposta/compra', 'PropostaCompraController');
-Route::resource('proposta/locacao', 'PropostaLocacaoController');
-Route::resource('proposta/lancamento', 'PropostaLancamentoController');
-Route::resource('cadastro/pessoa-fisica', 'CadastroCompradorPfController');
-Route::resource('cadastro/pessoa-juridica', 'CadastroCompradorPjController');
-Route::resource('cadastro/locatario/pessoa-fisica', 'CadastroLocatarioPfController');
-Route::resource('cadastro/locatario/pessoa-juridica', 'CadastroLocatarioPjController');
-Route::resource('cadastro/fiador/pessoa-fisica', 'CadastroFiadorPfController');
-Route::resource('cadastro/fiador/pessoa-juridica', 'CadastroFiadorPjController');
-Route::resource('cadastro/imovel', 'CadastroImoveisController');
-Route::resource('cadastro/encomendar-imovel', 'EncomendarImovelController');
-Route::resource('curriculo', 'CurriculoController');
-Route::resource('fale-conosco', 'FaleConoscoController');
-Route::resource('solicitar-informacoes', 'SolicitarInformacoesController');
-Route::resource('solicitar-contato', 'SolicitarContatoController');
-Route::resource('analise-credito', 'AnaliseController');
-Route::resource('solicitar-informacoes-imovel', 'SolicitarInformacoesImovelController');
+Route::middleware('auth')->group(function () {
+
+  Route::get('/home', 'HomeController@index')->name('home');
+  Route::resource('propostas/pessoa-fisica', 'PropostaPessoaFisicaController');
+  Route::resource('propostas/pessoa-juridica', 'PropostaPessoaJuridicaController');
+  Route::resource('proposta/compra', 'PropostaCompraController');
+  Route::resource('proposta/locacao', 'PropostaLocacaoController');
+  Route::resource('proposta/lancamento', 'PropostaLancamentoController');
+  Route::resource('cadastro/pessoa-fisica', 'CadastroCompradorPfController');
+  Route::resource('cadastro/pessoa-juridica', 'CadastroCompradorPjController');
+  Route::resource('cadastro/locatario/pessoa-fisica', 'CadastroLocatarioPfController');
+  Route::resource('cadastro/locatario/pessoa-juridica', 'CadastroLocatarioPjController');
+  Route::resource('cadastro/fiador/pessoa-fisica', 'CadastroFiadorPfController');
+  Route::resource('cadastro/fiador/pessoa-juridica', 'CadastroFiadorPjController');
+  Route::resource('cadastro/imovel', 'CadastroImoveisController');
+  Route::resource('cadastro/encomendar-imovel', 'EncomendarImovelController');
+  Route::resource('curriculo', 'CurriculoController');
+  Route::resource('fale-conosco', 'FaleConoscoController');
+  Route::resource('solicitar-informacoes', 'SolicitarInformacoesController');
+  Route::resource('solicitar-contato', 'SolicitarContatoController');
+  Route::resource('analise-credito', 'AnaliseController');
+  Route::resource('solicitar-informacoes-imovel', 'SolicitarInformacoesImovelController');
+  Route::resource('compartilhar', 'CompartilharController');
+
+});

@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Seabra - Propostas Compra')
+@section('title', 'Seabra - Curriculos')
 
 @section('content_header')
-    <h1>Propostas Compra</h1>
+    <h1>Curriculos</h1>
 @stop
 
 @section('content')
