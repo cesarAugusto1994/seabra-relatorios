@@ -187,6 +187,12 @@ return [
                     ],
                 ],
 
+                [
+                    'text'        => 'Análise de Crédito',
+                    'url'         => '/analise-credito',
+                    'icon'        => 'money',
+                ],
+
 
             ],
         ],
@@ -203,23 +209,19 @@ return [
         [
             'text'        => 'E-mail',
             'url'         => '/fale-conosco',
-            'icon'        => 'comments-o',
+            'icon'        => 'envelope-o',
         ],
         [
-            'text'        => 'Solicitação de Contato',
-            'url'         => '/solicitar-contato',
-            'icon'        => 'phone',
+            'text'        => 'Imóveis Contato',
+            'url'         => '/solicitar-informacoes-imovel',
+            'icon'        => 'home',
         ],
         [
-            'text'        => 'Solicitação de Informacoes',
+            'text'        => 'Ofertas E-mail',
             'url'         => '/solicitar-informacoes',
             'icon'        => 'comments-o',
         ],
-        [
-            'text'        => 'Análise de Crédito',
-            'url'         => '/analise-credito',
-            'icon'        => 'money',
-        ],
+
         [
             'text'        => 'Curriculos',
             'url'         => '/curriculo',

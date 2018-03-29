@@ -39,6 +39,11 @@
                       </tr>
 
                       <tr>
+                        <th>Sexo</th>
+                        <td>{{ $pessoa->fisica->sexo }}</td>
+                      </tr>
+
+                      <tr>
                         <th>Nascimento</th>
                         <td>{{ $pessoa->fisica->nascimento }}</td>
                       </tr>
@@ -66,6 +71,11 @@
                       <tr>
                         <th>Regime Casamento</th>
                         <td>{{ $pessoa->fisica->regime_casamento }}</td>
+                      </tr>
+
+                      <tr>
+                        <th>Convive Maritalmente</th>
+                        <td>{{ $pessoa->fisica->convive_miritalmente ? 'Sim' : 'Não' }}</td>
                       </tr>
 
                       <tr>

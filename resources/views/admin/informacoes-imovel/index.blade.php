@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Seabra - Fale Conosoco')
+@section('title', 'Seabra - Solicitação de Informações Imóvel')
 
 @section('content_header')
-    <h1>Fale Conosoco</h1>
+    <h1>Solicitação de Informações Imóvel</h1>
 @stop
 
 @section('content')
@@ -18,9 +18,10 @@
       <thead>
       <tr>
         <th>Nome</th>
-        <th>E-mail</th>
+        <th>Email</th>
         <th>Telefone</th>
         <th>Mensagem</th>
+        <th>Imovel</th>
         <th>Formulário Origem</th>
       </tr>
       </thead>
@@ -31,6 +32,7 @@
             <td>{{ $contato->email }}</td>
             <td>{{ $contato->telefone }}</td>
             <td>{{ $contato->mensagem }}</td>
+            <td>{{ $contato->imovel_nome }}</td>
             <td>{{ $contato->formulario_origem }}</td>
           </tr>
         @endforeach

@@ -34,3 +34,4 @@ Route::resource('fale-conosco', 'FaleConoscoController');
 Route::resource('solicitar-informacoes', 'SolicitarInformacoesController');
 Route::resource('solicitar-contato', 'SolicitarContatoController');
 Route::resource('analise-credito', 'AnaliseController');
+Route::resource('solicitar-informacoes-imovel', 'SolicitarInformacoesImovelController');
