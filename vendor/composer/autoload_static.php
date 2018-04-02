@@ -319,7 +319,6 @@ class ComposerStaticInitbeea7af1cfa911bf323f69d6ccedaf23
     );
 
     public static $classMap = array (
-        'App\\Compartilhar' => __DIR__ . '/../..' . '/app/Compartilhar.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Helpers\\Helper' => __DIR__ . '/../..' . '/app/Helpers/Helper.php',
@@ -336,6 +335,7 @@ class ComposerStaticInitbeea7af1cfa911bf323f69d6ccedaf23
         'App\\Http\\Controllers\\CadastroImoveisController' => __DIR__ . '/../..' . '/app/Http/Controllers/CadastroImoveisController.php',
         'App\\Http\\Controllers\\CadastroLocatarioPfController' => __DIR__ . '/../..' . '/app/Http/Controllers/CadastroLocatarioPfController.php',
         'App\\Http\\Controllers\\CadastroLocatarioPjController' => __DIR__ . '/../..' . '/app/Http/Controllers/CadastroLocatarioPjController.php',
+        'App\\Http\\Controllers\\CompartilharController' => __DIR__ . '/../..' . '/app/Http/Controllers/CompartilharController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\CurriculoController' => __DIR__ . '/../..' . '/app/Http/Controllers/CurriculoController.php',
         'App\\Http\\Controllers\\EncomendarImovelController' => __DIR__ . '/../..' . '/app/Http/Controllers/EncomendarImovelController.php',
@@ -355,6 +355,8 @@ class ComposerStaticInitbeea7af1cfa911bf323f69d6ccedaf23
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Mail\\Usuario\\Cadastro' => __DIR__ . '/../..' . '/app/Mail/Usuario/Cadastro.php',
+        'App\\Models\\Compartilhar' => __DIR__ . '/../..' . '/app/Models/Compartilhar.php',
         'App\\Models\\CorrecaoMonetaria' => __DIR__ . '/../..' . '/app/Models/CorrecaoMonetaria.php',
         'App\\Models\\Curriculo' => __DIR__ . '/../..' . '/app/Models/Curriculo.php',
         'App\\Models\\Empreendimento' => __DIR__ . '/../..' . '/app/Models/Empreendimento.php',

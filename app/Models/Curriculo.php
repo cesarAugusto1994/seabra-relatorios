@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Curriculo extends Model
 {
-    //
+    protected $dates = ['created_at'];
 }

@@ -17,41 +17,45 @@
     <table class="table table-hover table-striped no-margin">
       <thead>
       <tr>
+        <th>Data</th>
         <th>Nome</th>
-        <th>Idade</th>
         <th>Telefone</th>
         <th>Celular</th>
+        <th>Idade</th>
 
-        <th>Veículo Próprio</th>
-        <th>Experiência Mercado Imobiliário</th>
+        <th>Cargo Pretendido</th>
         <th>Escolariade</th>
-        <th>Inglês</th>
-        <th>Espanhol</th>
-        <th>Outros Idiomas</th>
-        <th>Outros Idiomas Descrição</th>
-        <th>Conhecimentos de Informática</th>
+        <th>Experiência Mercado Imobiliário</th>
+
+        <th>CRECI</th>
+        <th>Veículo Próprio</th>
+
         <th>Experiência Televendas</th>
-        <th>Experiências Profissionais</th>
+        <th>Conhecimentos de Informática</th>
+        <th>Pretensão de Ganhos</th>
+
+        <th>Opções</th>
+
 
       </tr>
       </thead>
       <tbody>
         @foreach($curriculos as $curriculo)
           <tr>
+            <td>{{ $curriculo->created_at->format('d/m/Y H:i') }}</td>
             <td>{{ $curriculo->nome }}</td>
-            <td>{{ $curriculo->idade }}</td>
             <td>{{ $curriculo->telefone_ddd }} - {{ $curriculo->telefone }}</td>
             <td>{{ $curriculo->celular_ddd }} - {{ $curriculo->celular }}</td>
-            <td>{{ $curriculo->veiculo_proprio ? 'Sim' : 'Não' }}</td>
-            <td>{{ $curriculo->experiencia_mercado_imobiliario ? 'Sim' : 'Não' }}</td>
+            <td>{{ $curriculo->idade }}</td>
+            <td>{{ $curriculo->cargo }}</td>
             <td>{{ $curriculo->escolaridade }}</td>
-            <td>{{ $curriculo->idioma_ingles }}</td>
-            <td>{{ $curriculo->idioma_espanhol }}</td>
-            <td>{{ $curriculo->outros_idiomas }}</td>
-            <td>{{ $curriculo->outros_idiomas_descricao }}</td>
-            <td>{{ $curriculo->conhecimentos_informatica ? 'Sim' : 'Não' }}</td>
+            <td>{{ $curriculo->experiencia_mercado_imobiliario ? 'Sim' : 'Não' }}</td>
+            <td>{{ $curriculo->creci }}</td>
+            <td>{{ $curriculo->veiculo_proprio ? 'Sim' : 'Não' }}</td>
             <td>{{ $curriculo->experiencia_televendas ? 'Sim' : 'Não' }}</td>
-            <td>{{ $curriculo->experiencias_profissionais }}</td>
+            <td>{{ $curriculo->conhecimentos_informatica ? 'Sim' : 'Não' }}</td>
+            <td>{{ $curriculo->salario }}</td>
+            <td><a href="{{ url('/curriculo/' . $curriculo->id) }}" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> Ver</a></td>
           </tr>
         @endforeach
       </tbody>

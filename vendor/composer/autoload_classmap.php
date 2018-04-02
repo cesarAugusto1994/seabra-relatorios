@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App\\Compartilhar' => $baseDir . '/app/Compartilhar.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Helpers\\Helper' => $baseDir . '/app/Helpers/Helper.php',
@@ -23,6 +22,7 @@ return array(
     'App\\Http\\Controllers\\CadastroImoveisController' => $baseDir . '/app/Http/Controllers/CadastroImoveisController.php',
     'App\\Http\\Controllers\\CadastroLocatarioPfController' => $baseDir . '/app/Http/Controllers/CadastroLocatarioPfController.php',
     'App\\Http\\Controllers\\CadastroLocatarioPjController' => $baseDir . '/app/Http/Controllers/CadastroLocatarioPjController.php',
+    'App\\Http\\Controllers\\CompartilharController' => $baseDir . '/app/Http/Controllers/CompartilharController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\CurriculoController' => $baseDir . '/app/Http/Controllers/CurriculoController.php',
     'App\\Http\\Controllers\\EncomendarImovelController' => $baseDir . '/app/Http/Controllers/EncomendarImovelController.php',
@@ -42,6 +42,8 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Mail\\Usuario\\Cadastro' => $baseDir . '/app/Mail/Usuario/Cadastro.php',
+    'App\\Models\\Compartilhar' => $baseDir . '/app/Models/Compartilhar.php',
     'App\\Models\\CorrecaoMonetaria' => $baseDir . '/app/Models/CorrecaoMonetaria.php',
     'App\\Models\\Curriculo' => $baseDir . '/app/Models/Curriculo.php',
     'App\\Models\\Empreendimento' => $baseDir . '/app/Models/Empreendimento.php',

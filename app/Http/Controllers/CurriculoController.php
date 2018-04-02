@@ -14,7 +14,7 @@ class CurriculoController extends Controller
      */
     public function index()
     {
-        $curriculos = Curriculo::paginate();
+        $curriculos = Curriculo::orderByDesc('id')->paginate();
         return view('admin.curriculos.index', compact('curriculos'));
     }
 
@@ -47,9 +47,8 @@ class CurriculoController extends Controller
      */
     public function show($id)
     {
-        $curriculos = Curriculo::paginate();
-
-        return view('admin.curriculos.details', compact('curriculos'));
+        $curriculo = Curriculo::findOrFail($id);
+        return view('admin.curriculos.details', compact('curriculo'));
     }
 
     /**
