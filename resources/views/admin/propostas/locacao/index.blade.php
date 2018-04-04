@@ -23,29 +23,27 @@
         <th class="text-center "></th>
       </tr>
       <tr>
+        <th>Data</th>
         <th>Nome</th>
         <th>Email</th>
         <th>Telefone</th>
         <th>Celular</th>
-
         <th>Tipo Imóvel</th>
         <th>Endereço</th>
         <th>Bairro</th>
         <th>CEP</th>
         <th>Cidade</th>
         <th>UF</th>
-
         <th>Aluguel</th>
         <th>Data Inicio</th>
         <th>Periodo</th>
-
         <th>Opções</th>
-
       </tr>
       </thead>
       <tbody>
         @foreach($propostas as $proposta)
           <tr>
+            <td>{{ $proposta->criado_em->format('d/m/Y H:i') }}</td>
             <td>{{ $proposta->pessoa->nome }}</td>
             <td>{{ $proposta->pessoa->email }}</td>
             <td>{{ $proposta->pessoa->telefone }}</td>

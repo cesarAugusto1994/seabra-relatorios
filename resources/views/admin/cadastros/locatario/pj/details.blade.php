@@ -34,6 +34,11 @@
                       </tr>
 
                       <tr>
+                        <th>Data</th>
+                        <td>{{ $pessoa->criado_em->format('d/m/Y H:i') }}</td>
+                      </tr>
+
+                      <tr>
                         <th>Razão Social</th>
                         <td>{{ $pessoa->nome }}</td>
                       </tr>
@@ -53,10 +58,14 @@
                         <td>{{ $pessoa->celular }}</td>
                       </tr>
 
+                      @if($pessoa->juridica)
+
                       <tr>
                         <th>Ramo Atividade</th>
                         <td>{{ $pessoa->juridica->ramo_atividade }}</td>
                       </tr>
+
+                      @endif
 
                       <tr>
                         <th>Endereço</th>
@@ -83,6 +92,8 @@
                         <td>{{ $pessoa->endereco->estado }}</td>
                       </tr>
 
+                      @if($pessoa->juridica)
+
                       <tr>
                         <th>CNPJ</th>
                         <td>{{ $pessoa->juridica->cnpj }}</td>
@@ -98,10 +109,14 @@
                         <td>{{ $pessoa->juridica->ano_fundacao }}</td>
                       </tr>
 
+                      @endif
+
                       <tr>
                         <th>Imovel </th>
                         <td>{{ $pessoa->imovel_situacao }}</td>
                       </tr>
+
+                      @if($pessoa->juridica)
 
                       <tr>
                         <th>Ramo Atividade</th>
@@ -172,6 +187,8 @@
                         <th>Telefone</th>
                         <td>{{ $pessoa->responsavel->telefone }}</td>
                       </tr>
+
+                      @endif
 
                       <tr>
                         <th>Cartório Rec. Firma</th>

@@ -22,21 +22,15 @@
         <th>Telefone</th>
         <th>Celular</th>
         <th>Idade</th>
-
         <th>Cargo Pretendido</th>
         <th>Escolariade</th>
         <th>Experiência Mercado Imobiliário</th>
-
         <th>CRECI</th>
         <th>Veículo Próprio</th>
-
         <th>Experiência Televendas</th>
         <th>Conhecimentos de Informática</th>
         <th>Pretensão de Ganhos</th>
-
         <th>Opções</th>
-
-
       </tr>
       </thead>
       <tbody>

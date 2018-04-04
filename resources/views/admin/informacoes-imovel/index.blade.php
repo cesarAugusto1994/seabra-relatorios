@@ -17,6 +17,7 @@
     <table class="table table-hover table-striped no-margin">
       <thead>
       <tr>
+        <th>Data</th>
         <th>Nome</th>
         <th>Email</th>
         <th>Telefone</th>
@@ -28,6 +29,7 @@
       <tbody>
         @foreach($contatos as $contato)
           <tr>
+            <td>{{ $contato->created_at->format('d/m/Y H:i') }}</td>
             <td>{{ $contato->nome }}</td>
             <td>{{ $contato->email }}</td>
             <td>{{ $contato->telefone }}</td>

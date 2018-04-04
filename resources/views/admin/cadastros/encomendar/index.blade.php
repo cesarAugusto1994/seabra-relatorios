@@ -17,6 +17,7 @@
     <table class="table table-hover table-striped no-margin">
       <thead>
       <tr>
+        <th>Data</th>
         <th>Nome</th>
         <th>Email</th>
         <th>Telefone</th>
@@ -28,6 +29,7 @@
       <tbody>
         @foreach($pessoas as $pessoa)
           <tr>
+            <td>{{ $pessoa->criado_em->format('d/m/Y H:i') }}</td>
             <td>{{ $pessoa->nome }}</td>
             <td>{{ $pessoa->email }}</td>
             <td>{{ $pessoa->telefone }}</td>

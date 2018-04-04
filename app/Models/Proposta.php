@@ -8,6 +8,8 @@ class Proposta extends Model
 {
     protected $table = 'propostas';
 
+    protected $dates = ['created_at', 'criado_em'];
+
     public function pessoa()
     {
         return $this->belongsTo(Pessoa::class, 'pessoa_id');

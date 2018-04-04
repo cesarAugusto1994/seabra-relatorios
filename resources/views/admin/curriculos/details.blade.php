@@ -34,6 +34,11 @@
                       </tr>
 
                       <tr>
+                        <th>Data</th>
+                        <td>{{ $curriculo->created_at->format('d/m/Y H:i') }}</td>
+                      </tr>
+
+                      <tr>
                         <th>Nome</th>
                         <td>{{ $curriculo->nome }}</td>
                       </tr>

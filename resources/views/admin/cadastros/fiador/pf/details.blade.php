@@ -34,6 +34,11 @@
                       </tr>
 
                       <tr>
+                        <th>Data</th>
+                        <td>{{ $pessoa->criado_em->format('d/m/Y H:i') }}</td>
+                      </tr>
+
+                      <tr>
                         <th>Nome</th>
                         <td>{{ $pessoa->nome }}</td>
                       </tr>
@@ -52,6 +57,8 @@
                         <th>Celular</th>
                         <td>{{ $pessoa->celular }}</td>
                       </tr>
+
+                      @if($pessoa->fisica)
 
                       <tr>
                         <th>Estado Civil</th>
@@ -87,6 +94,8 @@
                         <th>Profissao</th>
                         <td>{{ $pessoa->fisica->profissao ?? 'Não Informado' }}</td>
                       </tr>
+
+                      @endif
 
                       <tr>
                         <th>Endereço</th>
@@ -128,6 +137,8 @@
                         <td>{{ $pessoa->cartorio_reconhecimento_firma }}</td>
                       </tr>
 
+                      @if($pessoa->fisica)
+
                       <tr>
                         <th>Fiador</th>
                         <td>{{ $pessoa->fisica->fiador }}</td>
@@ -148,6 +159,8 @@
                         <td>R$ {{ number_format($pessoa->fisica->fgts_valor, 2, ',', '.') }}</td>
                       </tr>
 
+                      @endif
+
                       </thead>
 
                     </table>
@@ -155,6 +168,8 @@
                 </div>
               </div>
           </div>
+
+          @if($pessoa->conjuge)
 
           <div class="col-lg-6">
               <div class="box box-default">
@@ -274,8 +289,12 @@
               </div>
           </div>
 
+          @endif
+
       </div>
       <div class="row">
+
+          @if($pessoa->dadosComerciais)
 
           <div class="col-lg-4">
               <div class="box box-default">
@@ -354,6 +373,8 @@
                 </div>
               </div>
           </div>
+
+          @endif
 
           <div class="col-lg-4">
               <div class="box box-default">

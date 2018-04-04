@@ -24,7 +24,7 @@
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
               </div>
             </div>
-            <div class="box-body">
+            <div class="box-body" style="min-height: 250px;max-height: 250px;overflow-y: auto;">
               <table class="table">
                 <tbody>
                   @forelse(App\Helpers\PropostaHelper::getPropostasPorTipo('Proposta Compra', 1) as $item)
@@ -58,7 +58,7 @@
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
               </div>
             </div>
-            <div class="box-body">
+            <div class="box-body" style="min-height: 250px;max-height: 250px;overflow-y: auto;">
               <table class="table">
                 <tbody>
                   @forelse(App\Helpers\PropostaHelper::getPropostasPorTipo('Proposta Locacao', 1) as $item)
@@ -92,7 +92,7 @@
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
               </div>
             </div>
-            <div class="box-body">
+            <div class="box-body" style="min-height: 250px;max-height: 250px;overflow-y: auto;">
               <table class="table">
                 <tbody>
                   @forelse(App\Helpers\PropostaHelper::getPropostasPorTipo('Proposta Lancamento', 1) as $item)
@@ -121,7 +121,7 @@
 
     <div class="row">
 
-      <div class="col-md-6">
+      <div class="col-md-3">
           <div class="box box-success">
             <div class="box-header with-border">
               <h3 class="box-title">Compradores PF</h3>
@@ -130,7 +130,7 @@
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
               </div>
             </div>
-            <div class="box-body">
+            <div class="box-body" style="min-height: 250px;max-height: 250px;overflow-y: auto;">
               <table class="table">
                 <tbody>
                   @forelse(App\Helpers\Helper::registroPorTipoCadastro(1, 1) as $item)
@@ -155,7 +155,7 @@
           </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-3">
           <div class="box box-success">
             <div class="box-header with-border">
               <h3 class="box-title">Compradores PJ</h3>
@@ -164,7 +164,7 @@
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
               </div>
             </div>
-            <div class="box-body">
+            <div class="box-body" style="min-height: 250px;max-height: 250px;overflow-y: auto;">
               <table class="table">
                 <tbody>
                   @forelse(App\Helpers\Helper::registroPorTipoCadastro(2, 1) as $item)
@@ -189,11 +189,7 @@
           </div>
       </div>
 
-    </div>
-
-    <div class="row">
-
-      <div class="col-md-6">
+      <div class="col-md-3">
           <div class="box box-warning">
             <div class="box-header with-border">
               <h3 class="box-title">Locatários PF</h3>
@@ -202,7 +198,7 @@
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
               </div>
             </div>
-            <div class="box-body">
+            <div class="box-body" style="min-height: 250px;max-height: 250px;overflow-y: auto;">
               <table class="table">
                 <tbody>
                   @forelse(App\Helpers\Helper::registroPorTipoCadastro(3, 1) as $item)
@@ -227,7 +223,7 @@
           </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-3">
           <div class="box box-warning">
             <div class="box-header with-border">
               <h3 class="box-title">Locatários PJ</h3>
@@ -236,7 +232,7 @@
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
               </div>
             </div>
-            <div class="box-body">
+            <div class="box-body" style="min-height: 250px;max-height: 250px;overflow-y: auto;">
               <table class="table">
                 <tbody>
                   @forelse(App\Helpers\Helper::registroPorTipoCadastro(4, 1) as $item)
@@ -265,7 +261,7 @@
 
     <div class="row">
 
-      <div class="col-md-6">
+      <div class="col-md-3">
           <div class="box box-info">
             <div class="box-header with-border">
               <h3 class="box-title">Fiadores PF</h3>
@@ -274,7 +270,7 @@
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
               </div>
             </div>
-            <div class="box-body">
+            <div class="box-body" style="min-height: 250px;max-height: 250px;overflow-y: auto;">
               <table class="table">
                 <tbody>
                   @forelse(App\Helpers\Helper::registroPorTipoCadastro(5, 1) as $item)
@@ -299,7 +295,7 @@
           </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-3">
           <div class="box box-info">
             <div class="box-header with-border">
               <h3 class="box-title">Fiadores PJ</h3>
@@ -308,7 +304,7 @@
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
               </div>
             </div>
-            <div class="box-body">
+            <div class="box-body" style="min-height: 250px;max-height: 250px;overflow-y: auto;">
               <table class="table">
                 <tbody>
                   @forelse(App\Helpers\Helper::registroPorTipoCadastro(6, 1) as $item)
@@ -333,11 +329,7 @@
           </div>
       </div>
 
-    </div>
-
-    <div class="row">
-
-      <div class="col-md-6">
+      <div class="col-md-3">
           <div class="box box-success">
             <div class="box-header with-border">
               <h3 class="box-title">Imóveis Cadastrados</h3>
@@ -346,7 +338,7 @@
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
               </div>
             </div>
-            <div class="box-body">
+            <div class="box-body" style="min-height: 250px;max-height: 250px;overflow-y: auto;">
               <table class="table">
                 <tbody>
                   @forelse(App\Helpers\Helper::registroPorTipoCadastro(7, 1) as $item)
@@ -371,7 +363,7 @@
           </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-3">
           <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">Imóveis Encomendados</h3>
@@ -379,7 +371,7 @@
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
               </div>
             </div>
-            <div class="box-body">
+            <div class="box-body" style="min-height: 250px;max-height: 250px;overflow-y: auto;">
               <table class="table">
                 <tbody>
                   @forelse(App\Helpers\Helper::registroPorTipoCadastro(8, 1) as $item)

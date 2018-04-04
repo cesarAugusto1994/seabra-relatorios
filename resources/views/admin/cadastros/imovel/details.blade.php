@@ -36,6 +36,11 @@
                       </tr>
 
                       <tr>
+                        <th>Data</th>
+                        <td>{{ $pessoa->criado_em->format('d/m/Y H:i') }}</td>
+                      </tr>
+
+                      <tr>
                         <th>Nome</th>
                         <td>{{ $pessoa->nome }}</td>
                       </tr>

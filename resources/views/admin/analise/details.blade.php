@@ -34,6 +34,11 @@
                       </tr>
 
                       <tr>
+                        <th>Data</th>
+                        <td>{{ $pessoa->criado_em->format('d/m/Y H:i') }}</td>
+                      </tr>
+
+                      <tr>
                         <th>Nome</th>
                         <td>{{ $pessoa->nome }}</td>
                       </tr>
@@ -708,7 +713,8 @@
               </div>
           </div>
 
-          <div class="col-lg-3">
+          @if($pessoa->contato)
+            <div class="col-lg-3">
               <div class="box box-default">
                 <div class="box-header with-border">
                   <h3 class="box-title">Contato</h3>
@@ -756,7 +762,8 @@
                 </div>
               </div>
           </div>
-
+          @endif
+          
           <div class="col-lg-3">
               <div class="box box-default">
                 <div class="box-header with-border">

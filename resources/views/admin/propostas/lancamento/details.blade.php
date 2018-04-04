@@ -35,6 +35,11 @@
                       </tr>
 
                       <tr>
+                        <th>Data</th>
+                        <td>{{ $proposta->criado_em->format('d/m/Y H:i') }}</td>
+                      </tr>
+
+                      <tr>
                         <th>Tipo</th>
                         <td>{{ $proposta->tipo_proposta }}</td>
                       </tr>
