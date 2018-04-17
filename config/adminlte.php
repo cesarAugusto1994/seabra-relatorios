@@ -232,6 +232,11 @@ return [
             'url'         => '/compartilhar',
             'icon'        => 'share',
         ],
+        [
+            'text'        => '123i',
+            'url'         => '/#',
+            'icon'        => 'trophy',
+        ],
         'Configurações da Conta',
         [
             'text' => 'Trocar Senha',

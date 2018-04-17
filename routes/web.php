@@ -17,6 +17,22 @@ Auth::routes();
 
 Route::middleware('auth')->group(function () {
 
+  Route::get('/redirect', function () {
+
+      $uri = config('url');
+
+      $query = http_build_query([
+          'grant_type' => 'client_credentials',
+          'client_id' => 4,
+          "client_secret" => "ZEnVPKYdIax61hxsvsMg9K23goEws1ZWIkeZ7YTc",
+          'redirect_uri' => 'http://localhost:8005/auth/callback',
+          'response_type' => 'token',
+          'scope' => '',
+      ]);
+
+      return redirect($uri . '/oauth/token?'.$query);
+  });
+
   Route::get('/home', 'HomeController@index')->name('home');
   Route::resource('propostas/pessoa-fisica', 'PropostaPessoaFisicaController');
   Route::resource('propostas/pessoa-juridica', 'PropostaPessoaJuridicaController');
