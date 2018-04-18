@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Ixudra\Curl\Facades\Curl;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,10 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::middleware('auth:api')->resource('seo', 'SeoController');
+
+Route::post('/test', function (Request $request) {
+
 });

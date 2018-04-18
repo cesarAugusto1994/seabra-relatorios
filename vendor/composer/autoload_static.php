@@ -96,6 +96,7 @@ class ComposerStaticInitbeea7af1cfa911bf323f69d6ccedaf23
         ),
         'I' => 
         array (
+            'Ixudra\\Curl\\' => 12,
             'Illuminate\\' => 11,
         ),
         'G' => 
@@ -288,6 +289,10 @@ class ComposerStaticInitbeea7af1cfa911bf323f69d6ccedaf23
         array (
             0 => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src',
         ),
+        'Ixudra\\Curl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ixudra/curl/src',
+        ),
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
@@ -470,6 +475,7 @@ class ComposerStaticInitbeea7af1cfa911bf323f69d6ccedaf23
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Seo' => __DIR__ . '/../..' . '/app/Seo.php',
         'App\\TipoImovel' => __DIR__ . '/../..' . '/app/Models/TipoImovel.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
@@ -1954,6 +1960,10 @@ class ComposerStaticInitbeea7af1cfa911bf323f69d6ccedaf23
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
+        'Ixudra\\Curl\\Builder' => __DIR__ . '/..' . '/ixudra/curl/src/Builder.php',
+        'Ixudra\\Curl\\CurlService' => __DIR__ . '/..' . '/ixudra/curl/src/CurlService.php',
+        'Ixudra\\Curl\\CurlServiceProvider' => __DIR__ . '/..' . '/ixudra/curl/src/CurlServiceProvider.php',
+        'Ixudra\\Curl\\Facades\\Curl' => __DIR__ . '/..' . '/ixudra/curl/src/Facades/Curl.php',
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',

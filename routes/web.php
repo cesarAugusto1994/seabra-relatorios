@@ -11,6 +11,8 @@
 |
 */
 
+
+
 Route::get('/', 'HomeController@index');
 
 Auth::routes();
@@ -19,18 +21,16 @@ Route::middleware('auth')->group(function () {
 
   Route::get('/redirect', function () {
 
-      $uri = config('url');
+    $user = \Auth::user();
 
-      $query = http_build_query([
-          'grant_type' => 'client_credentials',
-          'client_id' => 4,
-          "client_secret" => "ZEnVPKYdIax61hxsvsMg9K23goEws1ZWIkeZ7YTc",
-          'redirect_uri' => 'http://localhost:8005/auth/callback',
-          'response_type' => 'token',
-          'scope' => '',
-      ]);
+    // Creating a token without scopes...
+    $token = $user->createToken($user->name)->accessToken;
 
-      return redirect($uri . '/oauth/token?'.$query);
+    $user->api_token = $token;
+    $user->save();
+
+    return redirect()->route('home');
+
   });
 
   Route::get('/home', 'HomeController@index')->name('home');
@@ -54,5 +54,6 @@ Route::middleware('auth')->group(function () {
   Route::resource('analise-credito', 'AnaliseController');
   Route::resource('solicitar-informacoes-imovel', 'SolicitarInformacoesImovelController');
   Route::resource('compartilhar', 'CompartilharController');
+  Route::resource('seo', 'SeoController');
 
 });

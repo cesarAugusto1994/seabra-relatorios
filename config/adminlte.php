@@ -234,7 +234,7 @@ return [
         ],
         [
             'text'        => '123i',
-            'url'         => '/#',
+            'url'         => '/seo',
             'icon'        => 'trophy',
         ],
         'Configurações da Conta',
