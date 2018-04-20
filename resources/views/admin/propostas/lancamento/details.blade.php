@@ -12,7 +12,9 @@
   <div class="box-header with-border">
     <h3 class="box-title">Detalhes</h3>
     <div class="box-tools pull-right">
-      <a class="btn btn-google btn-xs" href="{{ url('/proposta/lancamento') }}">Voltar</a>
+      <a class="btn btn-success btn-xs" href="{{ url('/proposta/lancamento') }}">Voltar</a>
+      <a data-destino="{{ url('/proposta/lancamento') }}" href="{{ route('proposta_lancamento_destroy', ['id' => $proposta->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro"><i class="fa fa-trash"></i> Remover</a>
+    </div>
     </div>
   </div>
   <div class="box-body">

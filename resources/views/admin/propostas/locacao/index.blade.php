@@ -37,7 +37,7 @@
         <th>Aluguel</th>
         <th>Data Inicio</th>
         <th>Periodo</th>
-        <th>Opções</th>
+        <th colspan="2">Opções</th>
       </tr>
       </thead>
       <tbody>
@@ -58,6 +58,7 @@
             <td>{{ $proposta->imovel->locacao->inicio_vigencia }}</td>
             <td>{{ $proposta->imovel->locacao->prazo_contrato }}</td>
             <td><a href="{{ url('/proposta/locacao/' . $proposta->id) }}" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> Ver</a></td>
+            <td><a data-destino="{{ url('/proposta/locacao/') }}" href="{{ route('proposta_locacao_destroy', ['id' => $proposta->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro"><i class="fa fa-trash"></i> Remover</a></td>
           </tr>
         @endforeach
       </tbody>

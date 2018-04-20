@@ -56,4 +56,17 @@ Route::middleware('auth')->group(function () {
   Route::resource('compartilhar', 'CompartilharController');
   Route::resource('seo', 'SeoController');
 
+  Route::post('analise-credito/{id}/destroy', 'AnaliseController@destroy')->name('analise_credito_destroy');
+  Route::post('propostas/pessoa-fisica/{id}/destroy', 'PropostaPessoaFisicaController@destroy')->name('proposta_pf_destroy');
+  Route::post('propostas/pessoa-juridica/{id}/destroy', 'PropostaPessoaJuridicaController@destroy')->name('proposta_pj_destroy');
+
+  Route::post('proposta/compra/{id}/destroy', 'PropostaCompraController@destroy')->name('proposta_compra_destroy');
+  Route::post('proposta/locacao/{id}/destroy', 'PropostaLocacaoController@destroy')->name('proposta_locacao_destroy');
+  Route::post('proposta/lancamento/{id}/destroy', 'PropostaLancamentoController@destroy')->name('proposta_lancamento_destroy');
+
+  Route::post('analise-credito/{id}/destroy', 'AnaliseController@destroy')->name('analise_credito_destroy');
+  Route::post('analise-credito/{id}/destroy', 'AnaliseController@destroy')->name('analise_credito_destroy');
+  Route::post('analise-credito/{id}/destroy', 'AnaliseController@destroy')->name('analise_credito_destroy');
+  Route::post('analise-credito/{id}/destroy', 'AnaliseController@destroy')->name('analise_credito_destroy');
+
 });

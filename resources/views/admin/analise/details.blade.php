@@ -12,7 +12,8 @@
   <div class="box-header with-border">
     <h3 class="box-title">Detalhes</h3>
     <div class="box-tools pull-right">
-      <a class="btn btn-google btn-xs" href="{{ url('/cadastro/pessoa-fisica') }}">Voltar</a>
+      <a class="btn btn-success btn-xs" href="{{ url('/analise-credito') }}">Voltar</a>
+      <a data-destino="{{ url('/analise-credito') }}" href="{{ route('analise_credito_destroy', ['id' => $pessoa->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro"><i class="fa fa-trash"></i> Remover</a>
     </div>
   </div>
   <div class="box-body">
@@ -611,6 +612,8 @@
       </div>
       <div class="row">
 
+          @if($pessoa->veiculo)
+
           <div class="col-lg-3">
               <div class="box box-default">
                 <div class="box-header with-border">
@@ -659,6 +662,8 @@
               </div>
           </div>
 
+          @endif
+
           <div class="col-lg-3">
               <div class="box box-default">
                 <div class="box-header with-border">
@@ -684,10 +689,14 @@
                               <td>{{ $pessoa->imovelSimples->bairro }}</td>
                             </tr>
 
+                            @if($pessoa->veiculo)
+
                             <tr>
                               <th>Quitado</th>
                               <td>{{ $pessoa->veiculo->imovelSimples ? 'Sim' : 'Não' }}</td>
                             </tr>
+
+                            @endif
 
                             <tr>
                               <th>Valor Prestação</th>
@@ -763,7 +772,7 @@
               </div>
           </div>
           @endif
-          
+
           <div class="col-lg-3">
               <div class="box box-default">
                 <div class="box-header with-border">

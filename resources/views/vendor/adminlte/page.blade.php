@@ -3,6 +3,8 @@
 @section('adminlte_css')
     <link rel="stylesheet"
           href="{{ asset('vendor/adminlte/dist/css/skins/skin-' . config('adminlte.skin', 'blue') . '.min.css')}} ">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.19.0/sweetalert2.min.css"/>
     @stack('css')
     @yield('css')
 @stop
@@ -134,4 +136,82 @@
     <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
     @stack('js')
     @yield('js')
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.19.0/sweetalert2.all.min.js"></script>
+
+    <script>
+
+      $(document).ready(function() {
+
+
+
+        $(".btnRemoverRegistro").click(function(e) {
+          e.preventDefault();
+
+          var self = $(this);
+
+
+          swal({
+            title: 'Deseja continuar?',
+            text: "Quer remover este registro?",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sim',
+            cancelButtonText: 'Cancelar',
+          }).then((result) => {
+            if (result.value) {
+
+              window.swal({
+                title: "Processando",
+                text: "Aguarde...",
+                imageUrl: "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif",
+                showConfirmButton: false,
+                allowOutsideClick: false
+              });
+
+
+              $.ajax({
+                type: 'POST',
+                headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url : self.attr('href'),
+                data: {},
+              }).done(function(data) {
+
+                  if(data.code == 201) {
+
+                    swal({
+                        position: 'top-end',
+                        type: 'success',
+                        title: data.message,
+                        showConfirmButton: false,
+                        timer: 1500
+                    }).then(function() {
+
+                      self.parents('tr').hide();
+
+                      window.location.href = self.data('destino');
+
+                    });
+
+
+                  }
+
+
+              });
+
+
+            }
+          })
+
+
+
+        })
+      });
+
+    </script>
+
 @stop

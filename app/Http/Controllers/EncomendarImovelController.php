@@ -94,6 +94,20 @@ class EncomendarImovelController extends Controller
      */
     public function destroy($id)
     {
-        //
+      try {
+          $registro = Pessoa::findOrFail($id);
+          $registro->delete();
+
+          return response()->json([
+            'code' => 201,
+            'message' => 'Removido com sucesso!'
+          ]);
+
+      } catch(Exception $e) {
+          return response()->json([
+            'code' => 501,
+            'message' => $e->getMessage()
+          ]);
+      }
     }
 }
