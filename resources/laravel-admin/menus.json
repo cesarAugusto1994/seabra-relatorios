@@ -1,0 +1,1 @@
+{"menus":[{"section":"User Manager","items":[{"title":"Users","url":"\/crud\/users"},{"title":"Roles","url":"\/crud\/roles"},{"title":"Permissions","url":"\/crud\/permissions"}]},{"section":"Tools","items":[{"title":"Generator","url":"\/admin\/generator"}]},{"section":"Modules","items":[]}]}

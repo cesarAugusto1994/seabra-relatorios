@@ -70,3 +70,12 @@ Route::middleware('auth')->group(function () {
   Route::post('analise-credito/{id}/destroy', 'AnaliseController@destroy')->name('analise_credito_destroy');
 
 });
+
+Route::middleware('auth')->group(function() {
+  Route::get('crud', 'Admin\AdminController@index');
+  Route::resource('crud/roles', 'Admin\RolesController');
+  Route::resource('crud/permissions', 'Admin\PermissionsController');
+  Route::resource('crud/users', 'Admin\UsersController');
+  Route::get('crud/generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@getGenerator']);
+  Route::post('crud/generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@postGenerator']);
+});
