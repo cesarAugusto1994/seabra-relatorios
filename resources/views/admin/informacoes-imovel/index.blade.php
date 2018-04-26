@@ -24,6 +24,7 @@
         <th>Mensagem</th>
         <th>Imovel</th>
         <th>Formulário Origem</th>
+        <th>Opções</th>
       </tr>
       </thead>
       <tbody>
@@ -36,6 +37,7 @@
             <td>{{ $contato->mensagem }}</td>
             <td>{{ $contato->imovel_nome }}</td>
             <td>{{ $contato->formulario_origem }}</td>
+            <td><a data-destino="{{ url('/solicitar-informacoes-imovel') }}" data-table="solicitacao_informacoes_imovel" href="{{ route('data_destroy', ['id' => $contato->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro2"><i class="fa fa-trash"></i> Remover</a></td>
           </tr>
         @endforeach
       </tbody>

@@ -24,6 +24,7 @@
         <th>Telefone</th>
         <th>Mensagem</th>
         <th>Empreendimento</th>
+        <th>Opções</th>
       </tr>
       </thead>
       <tbody>
@@ -36,6 +37,8 @@
             <td>{{ $contato->telefone }}</td>
             <td>{{ $contato->mensagem }}</td>
             <td>{{ $contato->empreendimento_id }}</td>
+            <td><a data-destino="{{ url('/seo') }}" data-table="seo" href="{{ route('data_destroy', ['id' => $contato->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro2"><i class="fa fa-trash"></i> Remover</a></td>
+          </tr>
           </tr>
         @endforeach
       </tbody>

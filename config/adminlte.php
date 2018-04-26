@@ -120,9 +120,61 @@ return [
             'icon'        => 'home',
         ],
         [
-            'text'    => 'Propostas',
+            'text'    => 'Clientes',
+            'icon'    => 'users',
+            'submenu' => [
+                [
+                    'text'        => 'E-mail',
+                    'url'         => '/fale-conosco',
+                    'icon'        => 'envelope-o',
+                ],
+                [
+                    'text'        => 'Imóveis Contato',
+                    'url'         => '/solicitar-informacoes-imovel',
+                    'icon'        => 'home',
+                ],
+                [
+                    'text'        => 'Ofertas E-mail',
+                    'url'         => '/solicitar-informacoes',
+                    'icon'        => 'comments-o',
+                ],
+                [
+                    'text'        => 'Indique um Amigo',
+                    'url'         => '/compartilhar',
+                    'icon'        => 'share',
+                ],
+                [
+                    'text'        => '123i',
+                    'url'         => '/seo',
+                    'icon'        => 'trophy',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'Imovel',
             'icon'    => 'plus',
             'submenu' => [
+                [
+                    'text'        => 'Cadastre seu Imóvel',
+                    'url'         => '/cadastro/imovel',
+                    'icon'        => 'building',
+                ],
+                [
+                    'text'        => 'Encomende seu Imóvel',
+                    'url'         => '/cadastro/encomendar-imovel',
+                    'icon'        => 'map-marker',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'Propostas e Cadastros',
+            'icon'    => 'plus',
+            'submenu' => [
+                [
+                    'text' => 'Lançamentos',
+                    'url'  => '/proposta/lancamento',
+                    'icon'    => 'star',
+                ],
                 [
                     'text' => 'Compra',
                     'url'  => '/proposta/compra',
@@ -132,18 +184,7 @@ return [
                     'url'  => '/proposta/locacao',
                 ],
                 [
-                    'text' => 'Lançamentos',
-                    'url'  => '/proposta/lancamento',
-                    'icon'    => 'star',
-                ],
-            ],
-        ],
-        [
-            'text'    => 'Fichas Cadastrais',
-            'icon'    => 'plus',
-            'submenu' => [
-                [
-                    'text' => 'Comprador',
+                    'text' => 'Comprador PF e PJ',
                     'icon' => 'id-badge',
                     'submenu' => [
                         [
@@ -158,7 +199,7 @@ return [
                 ],
 
                 [
-                    'text' => 'Locatario',
+                    'text' => 'Locatario PF e PJ',
                     'icon' => 'id-card',
                     'submenu' => [
                         [
@@ -171,9 +212,8 @@ return [
                         ],
                     ],
                 ],
-
                 [
-                    'text' => 'Fiador',
+                    'text' => 'Fiador PF e PJ',
                     'icon' => 'id-card-o',
                     'submenu' => [
                         [
@@ -186,56 +226,17 @@ return [
                         ],
                     ],
                 ],
-
                 [
-                    'text'        => 'Análise de Crédito',
+                    'text'        => 'Aprovação de Crédito',
                     'url'         => '/analise-credito',
                     'icon'        => 'money',
                 ],
-
-
             ],
         ],
-        [
-            'text'        => 'Cadastre seu Imóvel',
-            'url'         => '/cadastro/imovel',
-            'icon'        => 'building',
-        ],
-        [
-            'text'        => 'Encomende seu Imóvel',
-            'url'         => '/cadastro/encomendar-imovel',
-            'icon'        => 'map-marker',
-        ],
-        [
-            'text'        => 'E-mail',
-            'url'         => '/fale-conosco',
-            'icon'        => 'envelope-o',
-        ],
-        [
-            'text'        => 'Imóveis Contato',
-            'url'         => '/solicitar-informacoes-imovel',
-            'icon'        => 'home',
-        ],
-        [
-            'text'        => 'Ofertas E-mail',
-            'url'         => '/solicitar-informacoes',
-            'icon'        => 'comments-o',
-        ],
-
         [
             'text'        => 'Curriculos',
             'url'         => '/curriculo',
             'icon'        => 'user',
-        ],
-        [
-            'text'        => 'Indique um Amigo',
-            'url'         => '/compartilhar',
-            'icon'        => 'share',
-        ],
-        [
-            'text'        => '123i',
-            'url'         => '/seo',
-            'icon'        => 'trophy',
         ],
         'Configurações da Conta',
         [

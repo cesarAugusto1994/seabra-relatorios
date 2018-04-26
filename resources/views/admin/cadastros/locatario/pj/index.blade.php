@@ -25,7 +25,7 @@
         <th>Ramo Atividade</th>
         <th>CNPJ</th>
         <th>IE</th>
-        <th>Opçoes</th>
+        <th colspan="2">Opçoes</th>
       </tr>
       </thead>
       <tbody>
@@ -40,6 +40,7 @@
             <td>{{ $pessoa->juridica->cnpj }}</td>
             <td>{{ $pessoa->juridica->ie }}</td>
             <td><a href="{{ url('/cadastro/locatario/pessoa-juridica/' . $pessoa->id) }}" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> Ver</a></td>
+            <td><a data-destino="{{ url('/cadastro/pessoa-juridica/') }}" data-table="pessoas" href="{{ route('data_destroy', ['id' => $pessoa->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro2"><i class="fa fa-trash"></i> Remover</a></td>
           </tr>
         @endforeach
       </tbody>

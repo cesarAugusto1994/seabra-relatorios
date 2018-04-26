@@ -23,6 +23,7 @@
         <th>Telefone</th>
         <th>Mensagem</th>
         <th>Formulário Origem</th>
+        <th>Opções</th>
       </tr>
       </thead>
       <tbody>
@@ -34,6 +35,7 @@
             <td>{{ $contato->telefone }}</td>
             <td>{{ $contato->mensagem }}</td>
             <td>{{ $contato->formulario_origem }}</td>
+            <td><a data-destino="{{ url('/fale-conosco') }}" data-table="fale_conosco" href="{{ route('data_destroy', ['id' => $contato->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro2"><i class="fa fa-trash"></i> Remover</a></td>
           </tr>
         @endforeach
       </tbody>

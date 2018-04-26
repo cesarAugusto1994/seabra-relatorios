@@ -58,7 +58,7 @@
             <td>R$ {{ number_format($proposta->imovel->pagamento->pagamento_financiamento, 2, ',', '.') }}</td>
             <td>R$ {{ number_format($proposta->imovel->pagamento->preco_total, 2, ',', '.') }}</td>
             <td><a href="{{ url('/proposta/lancamento/' . $proposta->id) }}" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> Ver</a></td>
-            <td><a data-destino="{{ url('/proposta/lancamento/') }}" href="{{ route('proposta_lancamento_destroy', ['id' => $proposta->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro"><i class="fa fa-trash"></i> Remover</a></td>
+            <td><a data-destino="{{ url('/proposta/lancamento/') }}" data-table="propostas" href="{{ route('data_destroy', ['id' => $proposta->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro2"><i class="fa fa-trash"></i> Remover</a></td>
           </tr>
         @endforeach
       </tbody>

@@ -40,7 +40,7 @@
             <td>{{ $pessoa->fisica->cpf }}</td>
             <td>{{ $pessoa->fisica->rg }}</td>
             <td><a href="{{ url('/analise-credito/' . $pessoa->id) }}" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> Ver</a></td>
-            <td><a data-destino="{{ url('/analise-credito') }}" href="{{ route('analise_credito_destroy', ['id' => $pessoa->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro"><i class="fa fa-trash"></i> Remover</a></td>
+            <td><a data-destino="{{ url('/analise-credito') }}" data-table="pessoas" href="{{ route('data_destroy', ['id' => $pessoa->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro2"><i class="fa fa-trash"></i> Remover</a></td>
           </tr>
         @endforeach
       </tbody>

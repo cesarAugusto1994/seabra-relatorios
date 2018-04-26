@@ -30,7 +30,7 @@
         <th>Experiência Televendas</th>
         <th>Conhecimentos de Informática</th>
         <th>Pretensão de Ganhos</th>
-        <th>Opções</th>
+        <th colspan="2">Opções</th>
       </tr>
       </thead>
       <tbody>
@@ -50,6 +50,7 @@
             <td>{{ $curriculo->conhecimentos_informatica ? 'Sim' : 'Não' }}</td>
             <td>{{ $curriculo->salario }}</td>
             <td><a href="{{ url('/curriculo/' . $curriculo->id) }}" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> Ver</a></td>
+            <td><a data-destino="{{ url('/curriculo') }}" data-table="curriculos" href="{{ route('data_destroy', ['id' => $curriculo->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro2"><i class="fa fa-trash"></i> Remover</a></td>
           </tr>
         @endforeach
       </tbody>

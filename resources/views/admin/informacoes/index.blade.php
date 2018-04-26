@@ -24,6 +24,7 @@
         <th>Dúvida</th>
         <th>Imóveis</th>
         <th>Formulário Origem</th>
+        <th>Opções</th>
       </tr>
       </thead>
       <tbody>
@@ -43,6 +44,7 @@
               @if($contato->imovel_6){{ $contato->imovel_6 }} @endif
             </td>
             <td>{{ $contato->formulario_origem }}</td>
+            <td><a data-destino="{{ url('/solicitar-informacoes') }}" data-table="solicitar_informacoes" href="{{ route('data_destroy', ['id' => $contato->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro2"><i class="fa fa-trash"></i> Remover</a></td>
           </tr>
         @endforeach
       </tbody>

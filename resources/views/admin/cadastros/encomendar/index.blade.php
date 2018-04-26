@@ -23,7 +23,7 @@
         <th>Telefone</th>
         <th>Celular</th>
         <th>Cidade</th>
-        <th>Opçoes</th>
+        <th colspan="2">Opçoes</th>
       </tr>
       </thead>
       <tbody>
@@ -36,6 +36,7 @@
             <td>{{ $pessoa->celular }}</td>
             <td>{{ $pessoa->endereco->cidade }}</td>
             <td><a href="{{ url('/cadastro/encomendar-imovel/' . $pessoa->id) }}" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> Ver</a></td>
+            <td><a data-destino="{{ url('/cadastro/encomendar-imovel/') }}" data-table="pessoas" href="{{ route('data_destroy', ['id' => $pessoa->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro2"><i class="fa fa-trash"></i> Remover</a></td>
           </tr>
         @endforeach
       </tbody>

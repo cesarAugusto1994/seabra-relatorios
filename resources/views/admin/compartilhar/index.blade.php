@@ -24,6 +24,7 @@
         <th>Imovel</th>
         <th>Email Amigos</th>
         <th>Formulário Origem</th>
+        <th>Opções</th>
       </tr>
       </thead>
       <tbody>
@@ -36,6 +37,7 @@
             <td>{{ $contato->imovel_nome }}</td>
             <td>{{ str_replace(' ', ',', $contato->email_amigo) }}</td>
             <td>{{ $contato->formulario_origem }}</td>
+            <td><a data-destino="{{ url('/compartilhar') }}" data-table="compartilhar_imovel_amigos" href="{{ route('data_destroy', ['id' => $contato->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro2"><i class="fa fa-trash"></i> Remover</a></td>
           </tr>
         @endforeach
       </tbody>

@@ -64,10 +64,7 @@ Route::middleware('auth')->group(function () {
   Route::post('proposta/locacao/{id}/destroy', 'PropostaLocacaoController@destroy')->name('proposta_locacao_destroy');
   Route::post('proposta/lancamento/{id}/destroy', 'PropostaLancamentoController@destroy')->name('proposta_lancamento_destroy');
 
-  Route::post('analise-credito/{id}/destroy', 'AnaliseController@destroy')->name('analise_credito_destroy');
-  Route::post('analise-credito/{id}/destroy', 'AnaliseController@destroy')->name('analise_credito_destroy');
-  Route::post('analise-credito/{id}/destroy', 'AnaliseController@destroy')->name('analise_credito_destroy');
-  Route::post('analise-credito/{id}/destroy', 'AnaliseController@destroy')->name('analise_credito_destroy');
+  Route::post('data/{id}/destroy', 'HomeController@destroy')->name('data_destroy');
 
 });
 
