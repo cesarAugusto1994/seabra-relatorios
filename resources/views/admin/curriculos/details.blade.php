@@ -175,12 +175,17 @@
 
                       <tr>
                         <th>Possui Creci?</th>
-                        <td>{{ $curriculo->creci }}</td>
+                        <td>{{ $curriculo->creci ? 'Sim' : 'Não' }}</td>
+                      </tr>
+
+                      <tr>
+                        <th>Tipo Creci</th>
+                        <td>{{ $curriculo->tipo_creci ?? '-' }}</td>
                       </tr>
 
                       <tr>
                         <th>Creci N°</th>
-                        <td>{{ $curriculo->creci_numero }}</td>
+                        <td>{{ $curriculo->codigo_creci ?? '-' }}</td>
                       </tr>
 
                       <tr>
@@ -200,7 +205,7 @@
 
                       <tr>
                         <th>Salário Pretendido</th>
-                        <td>{{ $curriculo->salario }}</td>
+                        <td>{{ number_format((float)$curriculo->salario, 2, ',', '.') }}</td>
                       </tr>
 
                       <tr>

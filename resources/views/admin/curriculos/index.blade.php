@@ -26,6 +26,8 @@
         <th>Escolariade</th>
         <th>Experiência Mercado Imobiliário</th>
         <th>CRECI</th>
+        <th>Tipo CRECI</th>
+        <th>Cód. CRECI</th>
         <th>Veículo Próprio</th>
         <th>Experiência Televendas</th>
         <th>Conhecimentos de Informática</th>
@@ -44,11 +46,13 @@
             <td>{{ $curriculo->cargo }}</td>
             <td>{{ $curriculo->escolaridade }}</td>
             <td>{{ $curriculo->experiencia_mercado_imobiliario ? 'Sim' : 'Não' }}</td>
-            <td>{{ $curriculo->creci }}</td>
+            <td>{{ $curriculo->creci ? 'Sim' : 'Não' }}</td>
+            <td>{{ $curriculo->tipo_creci ?? '-' }}</td>
+            <td>{{ $curriculo->codigo_creci ?? '-' }}</td>
             <td>{{ $curriculo->veiculo_proprio ? 'Sim' : 'Não' }}</td>
             <td>{{ $curriculo->experiencia_televendas ? 'Sim' : 'Não' }}</td>
             <td>{{ $curriculo->conhecimentos_informatica ? 'Sim' : 'Não' }}</td>
-            <td>{{ $curriculo->salario }}</td>
+            <td>{{ number_format((float)$curriculo->salario, 2, ',', '.') }}</td>
             <td><a href="{{ url('/curriculo/' . $curriculo->id) }}" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> Ver</a></td>
             <td><a data-destino="{{ url('/curriculo') }}" data-table="curriculos" href="{{ route('data_destroy', ['id' => $curriculo->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro2"><i class="fa fa-trash"></i> Remover</a></td>
           </tr>

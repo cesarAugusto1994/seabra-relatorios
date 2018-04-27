@@ -25,6 +25,11 @@ class CreateCurriculosTable extends Migration
             $table->string('celular')->nullable();
             $table->boolean('veiculo_proprio')->default(false);
             $table->boolean('experiencia_mercado_imobiliario')->default(false);
+
+            $table->boolean('creci')->default(false);
+            $table->string('tipo_creci')->nullable();
+            $table->string('codigo_creci')->nullable();
+
             $table->string('escolaridade')->nullable();
             $table->string('idioma_ingles')->nullable();
             $table->string('idioma_espanhol')->nullable();
