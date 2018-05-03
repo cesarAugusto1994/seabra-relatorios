@@ -24,7 +24,7 @@
         <th>Celular</th>
         <th>Endereço</th>
         <th>Cidade</th>
-        <th colspan="2">Opçoes</th>
+        <th colspan="3">Opçoes</th>
       </tr>
       </thead>
       <tbody>
@@ -39,6 +39,7 @@
             <td>{{ $pessoa->endereco->cidade }}</td>
             <td><a href="{{ url('/cadastro/imovel/' . $pessoa->id) }}" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> Ver</a></td>
             <td><a data-destino="{{ url('/cadastro/imovel') }}" data-table="pessoas" href="{{ route('data_destroy', ['id' => $pessoa->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro2"><i class="fa fa-trash"></i> Remover</a></td>
+            <td><a href="{{ route('data_editable', ['id' => $pessoa->id, 'entidade' => 'pessoa', 'return' => '/cadastro/imovel']) }}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a></td>
           </tr>
         @endforeach
       </tbody>

@@ -178,6 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         JeroenNoten\LaravelAdminLte\ServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
 
     ],
 

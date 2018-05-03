@@ -56,6 +56,9 @@ Route::middleware('auth')->group(function () {
   Route::resource('compartilhar', 'CompartilharController');
   Route::resource('seo', 'SeoController');
 
+  Route::get('editar/{id}', 'EditarController@show')->name('data_editable');
+  Route::post('editar/{id}/update', 'EditarController@update')->name('data_editable_update');
+
   Route::post('analise-credito/{id}/destroy', 'AnaliseController@destroy')->name('analise_credito_destroy');
   Route::post('propostas/pessoa-fisica/{id}/destroy', 'PropostaPessoaFisicaController@destroy')->name('proposta_pf_destroy');
   Route::post('propostas/pessoa-juridica/{id}/destroy', 'PropostaPessoaJuridicaController@destroy')->name('proposta_pj_destroy');

@@ -25,7 +25,7 @@
         <th>Estado Civil</th>
         <th>CPF</th>
         <th>RG</th>
-        <th colspan="2">Opçoes</th>
+        <th colspan="3">Opçoes</th>
       </tr>
       </thead>
       <tbody>
@@ -41,6 +41,7 @@
             <td>{{ $pessoa->fisica->rg }}</td>
             <td><a href="{{ url('/analise-credito/' . $pessoa->id) }}" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> Ver</a></td>
             <td><a data-destino="{{ url('/analise-credito') }}" data-table="pessoas" href="{{ route('data_destroy', ['id' => $pessoa->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro2"><i class="fa fa-trash"></i> Remover</a></td>
+            <td><a href="{{ route('data_editable', ['id' => $pessoa->id, 'entidade' => 'pessoa', 'return' => '/analise-credito']) }}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a></td>
           </tr>
         @endforeach
       </tbody>

@@ -32,7 +32,7 @@
         <th>Experiência Televendas</th>
         <th>Conhecimentos de Informática</th>
         <th>Pretensão de Ganhos</th>
-        <th colspan="2">Opções</th>
+        <th colspan="3">Opções</th>
       </tr>
       </thead>
       <tbody>
@@ -55,6 +55,7 @@
             <td>{{ number_format((float)$curriculo->salario, 2, ',', '.') }}</td>
             <td><a href="{{ url('/curriculo/' . $curriculo->id) }}" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> Ver</a></td>
             <td><a data-destino="{{ url('/curriculo') }}" data-table="curriculos" href="{{ route('data_destroy', ['id' => $curriculo->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro2"><i class="fa fa-trash"></i> Remover</a></td>
+            <td><a href="{{ route('data_editable', ['id' => $curriculo->id, 'entidade' => 'curriculo', 'return' => 'curriculo.index']) }}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a></td>
           </tr>
         @endforeach
       </tbody>

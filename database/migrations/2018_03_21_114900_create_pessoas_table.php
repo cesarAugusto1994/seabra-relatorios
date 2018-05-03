@@ -17,7 +17,7 @@ class CreatePessoasTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->string('email');
-            $table->string('tipo_pessoa');
+            $table->string('tipo_pessoa')->nullable()->default('PF');
             $table->string('telefone');
             $table->string('celular');
             $table->string('imovel_situacao')->nullable();
