@@ -861,6 +861,55 @@
 
     @endif
 
+    @if($entidade == 'curriculo')
+
+    <div class="col-lg-12">
+
+      <div class="box box-default">
+      <div class="box-header with-border">
+        <h3 class="box-title">Formulário Curriculo</h3>
+      </div>
+      <div class="box-body">
+        <div class="">
+
+          <form class="form-horizontal" action="{{ route('data_editable_update', ['id' => $registros->id]) }}" method="post">
+
+            {{ csrf_field() }}
+
+            <input type="hidden" name="entidade" value="{{ $entidade }}"/>
+            <input type="hidden" name="return" value="{{ $return }}"/>
+
+            @foreach($registros->toArray() as $key => $registro)
+
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">{{ title_case(str_replace('_', ' ', $key)) }}</label>
+
+                  <div class="col-sm-10">
+
+                    @if(strlen($registro) < 50)
+                        <input type="text" value="{{$registro}}" name="{{$key}}" {{ $key == 'id' ? 'readonly' : '' }} class="form-control">
+                    @else
+                        <textarea rows="5" class="form-control" name="{{$key}}">{{$registro}}</textarea>
+                    @endif
+                  </div>
+                </div>
+
+
+            @endforeach
+
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <a href="{{ route($return) }}" class="btn btn-default">Cancelar</a>
+
+          </form>
+
+        </div>
+      </div>
+      </div>
+
+    </div>
+
+    @endif
+
 </div>
 
 @stop

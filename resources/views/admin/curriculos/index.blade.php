@@ -32,6 +32,7 @@
         <th>Experiência Televendas</th>
         <th>Conhecimentos de Informática</th>
         <th>Pretensão de Ganhos</th>
+        <th>Anexo </th>
         <th colspan="3">Opções</th>
       </tr>
       </thead>
@@ -40,8 +41,8 @@
           <tr>
             <td>{{ $curriculo->created_at->format('d/m/Y H:i') }}</td>
             <td>{{ $curriculo->nome }}</td>
-            <td>{{ $curriculo->telefone_ddd }} - {{ $curriculo->telefone }}</td>
-            <td>{{ $curriculo->celular_ddd }} - {{ $curriculo->celular }}</td>
+            <td>{{ $curriculo->telefone }}</td>
+            <td>{{ $curriculo->celular }}</td>
             <td>{{ $curriculo->idade }}</td>
             <td>{{ $curriculo->cargo }}</td>
             <td>{{ $curriculo->escolaridade }}</td>
@@ -53,6 +54,11 @@
             <td>{{ $curriculo->experiencia_televendas ? 'Sim' : 'Não' }}</td>
             <td>{{ $curriculo->conhecimentos_informatica ? 'Sim' : 'Não' }}</td>
             <td>{{ number_format((float)$curriculo->salario, 2, ',', '.') }}</td>
+            <td>
+                @if($curriculo->curriculo)
+                    <a target="_blank" href="{{ url('http://seabra.com.br/assets/curriculos/' . $curriculo->curriculo) }}" class="btn btn-default btn-xs"><i class="fa fa-paperclip"></i></a>
+                @endif
+            </td>
             <td><a href="{{ url('/curriculo/' . $curriculo->id) }}" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> Ver</a></td>
             <td><a data-destino="{{ url('/curriculo') }}" data-table="curriculos" href="{{ route('data_destroy', ['id' => $curriculo->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro2"><i class="fa fa-trash"></i> Remover</a></td>
             <td><a href="{{ route('data_editable', ['id' => $curriculo->id, 'entidade' => 'curriculo', 'return' => 'curriculo.index']) }}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a></td>
