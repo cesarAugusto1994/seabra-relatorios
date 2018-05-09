@@ -35,8 +35,8 @@
             <td>{{ $pessoa->email }}</td>
             <td>{{ $pessoa->telefone }}</td>
             <td>{{ $pessoa->celular }}</td>
-            <td>{{ $pessoa->endereco->logradouro }}</td>
-            <td>{{ $pessoa->endereco->cidade }}</td>
+            <td>{{ $pessoa->endereco->logradouro ?? '-' }}</td>
+            <td>{{ $pessoa->endereco->cidade ?? '-' }}</td>
             <td><a href="{{ url('/cadastro/imovel/' . $pessoa->id) }}" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> Ver</a></td>
             <td><a data-destino="{{ url('/cadastro/imovel') }}" data-table="pessoas" href="{{ route('data_destroy', ['id' => $pessoa->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro2"><i class="fa fa-trash"></i> Remover</a></td>
             <td><a href="{{ route('data_editable', ['id' => $pessoa->id, 'entidade' => 'pessoa', 'return' => '/cadastro/imovel']) }}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a></td>

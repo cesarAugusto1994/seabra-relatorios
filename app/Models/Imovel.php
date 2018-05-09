@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\ImagensImovel;
 
 class Imovel extends Model
 {
@@ -16,5 +17,10 @@ class Imovel extends Model
     public function locacao()
     {
         return $this->hasOne(ImovelLocacao::class, 'imovel_id');
+    }
+
+    public function imagens()
+    {
+        return $this->hasMany(ImagensImovel::class, 'imovel_id');
     }
 }

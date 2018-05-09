@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\ImagensImovel;
 
 class HomeController extends Controller
 {
@@ -34,6 +35,15 @@ class HomeController extends Controller
 
             if(!$data['table']) {
               throw new \Exception("Ocorreu um erro ao remover o item, tabela não informada.", 1);
+            }
+
+            if($data['table'] == 'imagens_imovel') {
+
+                $imagem = ImagensImovel::findOrFail($id);
+
+                if(is_dir('http://www.seabra.com.br/assets/imoveis/'.$imagem->link)) {
+                    unlink('http://www.seabra.com.br/assets/imoveis/'.$imagem->link);
+                }
             }
 
             $reg = DB::table($data['table'])->where('id', $id);

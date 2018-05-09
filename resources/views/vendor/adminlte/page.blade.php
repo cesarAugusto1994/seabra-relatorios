@@ -262,6 +262,7 @@
                       //window.location.href = self.data('destino');
 
                     self.parents('tr').hide();
+                    self.parents('.thumbnail').hide();
 
                   } else {
 

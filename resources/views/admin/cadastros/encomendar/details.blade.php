@@ -172,6 +172,42 @@
               </div>
           </div>
 
+          @if($pessoa->imovel)
+
+              <div class="col-lg-12">
+              <div class="box box-default">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Imagens</h3>
+                </div>
+                <div class="box-body">
+                  <div>
+
+                    <div class="row">
+
+                      @foreach($pessoa->imovel->imagens as $imagem)
+
+                      <div class="col-sm-6 col-md-2">
+                        <div class="thumbnail">
+                          <img style="max-height:200px;max-width:200px" src="http://www.seabra.com.br/assets/imoveis/{{ $imagem->link }}" alt="...">
+                          <div class="caption">
+                            <h3>{{ $imagem->titulo }}</h3>
+                            <p><a target="_blank" href="http://www.seabra.com.br/assets/imoveis/{{ $imagem->link }}" class="btn btn-xs btn-primary" role="button"><i class="fa fa-eye"></i> Visualizar</a>
+                              <a data-destino="{{ url('/cadastro/imovel/'. $pessoa->imovel->id) }}" data-table="imagens_imovel" href="{{ route('data_destroy', ['id' => $imagem->id]) }}" class="btn btn-xs btn-danger btnRemoverRegistro2" role="button"><i class="fa fa-trash"></i> Remover</a></p>
+                          </div>
+                        </div>
+                      </div>
+
+                      @endforeach
+
+                      </div>
+
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          @endif
+
       </div>
   </div>
 </div>

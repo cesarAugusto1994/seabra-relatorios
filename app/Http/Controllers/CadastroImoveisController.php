@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pessoa;
+use App\Models\{Pessoa, ImagensImovel};
 
 class CadastroImoveisController extends Controller
 {
@@ -24,7 +24,7 @@ class CadastroImoveisController extends Controller
      */
     public function index()
     {
-        $pessoas = Pessoa::where('tipo_cadastro_id', 7)->paginate();
+        $pessoas = Pessoa::where('tipo_cadastro_id', 7)->orderByDesc('id')->paginate();
 
         return view('admin.cadastros.imovel.index', compact('pessoas'));
     }
@@ -58,9 +58,9 @@ class CadastroImoveisController extends Controller
      */
     public function show($id)
     {
-        $pessoa = Pessoa::find($id);
+        $pessoa = Pessoa::findOrFail($id);
 
-        return view('admin.cadastros.imovel.details', compact('pessoa'));
+        return view('admin.cadastros.imovel.details', compact('pessoa', 'imagens'));
     }
 
     /**
