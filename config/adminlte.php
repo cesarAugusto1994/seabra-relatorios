@@ -164,6 +164,11 @@ return [
                     'url'         => '/cadastro/encomendar-imovel',
                     'icon'        => 'map-marker',
                 ],
+                [
+                    'text'        => 'Favoritos',
+                    'url'         => '/favoritos',
+                    'icon'        => 'star',
+                ],
             ],
         ],
         [

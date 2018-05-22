@@ -54,6 +54,7 @@ Route::middleware('auth')->group(function () {
   Route::resource('analise-credito', 'AnaliseController');
   Route::resource('solicitar-informacoes-imovel', 'SolicitarInformacoesImovelController');
   Route::resource('compartilhar', 'CompartilharController');
+  Route::resource('favoritos', 'FavoritosController');
   Route::resource('seo', 'SeoController');
 
   Route::get('editar/{id}', 'EditarController@show')->name('data_editable');

@@ -474,6 +474,7 @@ class ComposerStaticInitbeea7af1cfa911bf323f69d6ccedaf23
         'App\\Models\\Empreendimento' => __DIR__ . '/../..' . '/app/Models/Empreendimento.php',
         'App\\Models\\FaleConosco' => __DIR__ . '/../..' . '/app/Models/FaleConosco.php',
         'App\\Models\\GrauInstrucao' => __DIR__ . '/../..' . '/app/Models/GrauInstrucao.php',
+        'App\\Models\\ImagensImovel' => __DIR__ . '/../..' . '/app/Models/ImagensImovel.php',
         'App\\Models\\Imovel' => __DIR__ . '/../..' . '/app/Models/Imovel.php',
         'App\\Models\\ImovelCondicoesPagamento' => __DIR__ . '/../..' . '/app/Models/ImovelCondicoesPagamento.php',
         'App\\Models\\ImovelLocacao' => __DIR__ . '/../..' . '/app/Models/ImovelLocacao.php',

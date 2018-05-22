@@ -57,6 +57,7 @@ return array(
     'App\\Models\\Empreendimento' => $baseDir . '/app/Models/Empreendimento.php',
     'App\\Models\\FaleConosco' => $baseDir . '/app/Models/FaleConosco.php',
     'App\\Models\\GrauInstrucao' => $baseDir . '/app/Models/GrauInstrucao.php',
+    'App\\Models\\ImagensImovel' => $baseDir . '/app/Models/ImagensImovel.php',
     'App\\Models\\Imovel' => $baseDir . '/app/Models/Imovel.php',
     'App\\Models\\ImovelCondicoesPagamento' => $baseDir . '/app/Models/ImovelCondicoesPagamento.php',
     'App\\Models\\ImovelLocacao' => $baseDir . '/app/Models/ImovelLocacao.php',
