@@ -59,6 +59,8 @@ class SeoController extends Controller
         $seo->empreendimento_id = $data['empreendimento_id'];
         $seo->save();
 
+        $this->criarChamado($data);
+
         return response()->json([
             'code' => 201,
             'message' => 'dados adicionados com sucesso'
@@ -71,6 +73,134 @@ class SeoController extends Controller
         ]);
       }
 
+    }
+
+    public function criarChamado($data)
+    {
+        $crmConnect = \DB::connection('mysql_crm');
+
+        $empreedimento = $crmConnect->table('produto_genero')->select("*")->where('referencia', $data['empreendimento_id'])->get();
+
+        if($empreedimento->isEmpty()) {
+          throw new Exception('O Empreendimento não foi encontrado');
+        }
+
+        $empreedimento = $empreedimento->first();
+
+        $cliente = $crmConnect->table('emails')
+        ->select("*")
+        ->join('clientes', 'clientes.id', '=', 'emails.cliente_id')
+        ->where('email', $data['email'])
+        ->get();
+
+        if($cliente->isEmpty()) {
+
+          $clienteId = $crmConnect->table('clientes')->insertGetId(
+              [
+                'tipo' => '2',
+                'pessoa' => 1,
+                'forma_tratamento' => 1,
+                'nome' => $data['nome'],
+                'id_empresa' => 8,
+                'cpf' => '',
+                'sexo' => 1,
+              ]
+          );
+
+          $emailId = $crmConnect->table('emails')->insertGetId(
+              [
+                'email' => $data['email'],
+                'cliente_id' => $clienteId,
+                'principal' => 'SIM',
+              ]
+          );
+
+          $telefoneId = $crmConnect->table('telefones')->insertGetId(
+              [
+                'tipo' => '3',
+                'ramal' => '',
+                'ddd' => '11',
+                'ddi' => '55',
+                'telefone' => $data['telefone'],
+                'cliente_id' => $clienteId,
+                'principal' => 'SIM'
+              ]
+          );
+
+          $cliente = $cliente = $crmConnect->table('emails')
+          ->select("*")
+          ->join('clientes', 'clientes.id', '=', 'emails.cliente_id')
+          ->where('clientes.id', $clienteId)
+          ->get();
+
+        } else {
+            $clienteId = $cliente->first()->id;
+        }
+
+        $cliente = $cliente->first();
+
+        $midia = $crmConnect->table('midias')->select("*")->where('empresa_id', $cliente->id_empresa)->where('nome', 'Site')->get();
+
+        if($midia->isEmpty()) {
+
+          $midiaId = $crmConnect->table('midias')->insertGetId(
+              [
+                'nome' => 'Site',
+                'empresa_id' => $cliente->id_empresa
+              ]
+          );
+
+        } else {
+
+          $midiaId = $midia->first()->id;
+
+        }
+
+        $chamadoId = $crmConnect->table('chamado')->insertGetId(
+            [
+              'produto_servico' => $empreedimento->id,
+              'id_cliente' => $clienteId,
+              'empreendimento' => $empreedimento->nome,
+              'midia' => 'Site',
+              'manifestacao' => 2,
+              'grupo_manifestacao' => 6,
+              'tipo_manifestacao' => 1,
+              'id_usuario' => 1,
+              'descricao' => "Solicitação de informacoes de Imovel: ".$data['mensagem'],
+              'classificacao' => 1,
+              'area_atendimento' => 12,
+              'abertura_chamado' => date('Y-m-d H:i:s'),
+              'situacao' => 1,
+              'id_empresa' => 8,
+              'arquivado' => 0,
+              'pessoa_responsavel' => '0',
+              'conclusao' => '',
+            ]
+        );
+
+        $clienteProduto = $crmConnect->table('cliente_produtos')->select("*")->where('cliente_id', $clienteId)->where('produto_id', $empreedimento->id)->get();
+
+        if($clienteProduto->isEmpty()) {
+          $clienteProdutoId = $crmConnect->table('cliente_produtos')->insertGetId(
+              [
+                'chamado_id' => $chamadoId,
+                'produto_id' => $empreedimento->id,
+                'cliente_id' => $clienteId
+              ]
+          );
+        }
+
+        $clienteMidia = $crmConnect->table('cliente_midias')->select("*")->where('cliente_id', $clienteId)->where('midia_id', $midiaId)->get();
+
+        if($clienteMidia->isEmpty()) {
+          $clienteMidiaId = $crmConnect->table('cliente_midias')->insertGetId(
+              [
+                'chamado_id' => $chamadoId,
+                'midia_id' => $midiaId,
+                'cliente_id' => $clienteId
+              ]
+          );
+        }
 
     }
 
