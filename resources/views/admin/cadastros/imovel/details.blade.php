@@ -139,22 +139,22 @@
 
                       <tr>
                         <th>Valor Venda</th>
-                        <td>R$ {{ $pessoa->imovel ? number_format($pessoa->imovel->preco_venda, 2, ',', '.') : '-' }}</td>
+                        <td>R$ {{ $pessoa->imovel ? $pessoa->imovel->preco_venda : '-' }}</td>
                       </tr>
 
                       <tr>
                         <th>Valor Aluguel</th>
-                        <td>R$ {{ $pessoa->imovel ? number_format($pessoa->imovel->preco_aluguel, 2, ',', '.') : '-' }}</td>
+                        <td>R$ {{ $pessoa->imovel ? $pessoa->imovel->preco_aluguel : '-' }}</td>
                       </tr>
 
                       <tr>
                         <th>Condominio</th>
-                        <td>R$ {{ $pessoa->imovel ? number_format($pessoa->imovel->condominio, 2, ',', '.') : '-' }}</td>
+                        <td>R$ {{ $pessoa->imovel ? $pessoa->imovel->condominio : '-' }}</td>
                       </tr>
 
                       <tr>
                         <th>IPTU</th>
-                        <td>R$ {{ $pessoa->imovel ? number_format($pessoa->imovel->iptu, 2, ',', '.')  : '-'}}</td>
+                        <td>R$ {{ $pessoa->imovel ? $pessoa->imovel->iptu  : '-'}}</td>
                       </tr>
 
                       <tr>

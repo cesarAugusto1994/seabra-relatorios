@@ -126,17 +126,17 @@
 
                       <tr>
                         <th>Faixa de Preço</th>
-                        <td>R$ {{ number_format($pessoa->imovel->faixa_preco, 2, ',', '.') }}</td>
+                        <td>R$ {{ $pessoa->imovel->faixa_preco }}</td>
                       </tr>
 
                       <tr>
                         <th>Valor Entrada</th>
-                        <td>R$ {{ number_format($pessoa->imovel->valor_entrada, 2, ',', '.') }}</td>
+                        <td>R$ {{ $pessoa->imovel->valor_entrada }}</td>
                       </tr>
 
                       <tr>
                         <th>Valor Financiamento</th>
-                        <td>R$ {{ number_format($pessoa->imovel->valor_financiar, 2, ',', '.') }}</td>
+                        <td>R$ {{ $pessoa->imovel->valor_financiar }}</td>
                       </tr>
 
                       <tr>
@@ -151,7 +151,7 @@
 
                       <tr>
                         <th>Valor FGTS</th>
-                        <td>R$ {{ number_format($pessoa->imovel->fgts_valor, 2, ',', '.') }}</td>
+                        <td>R$ {{ $pessoa->imovel->valor_fgts }}</td>
                       </tr>
 
                       <tr>

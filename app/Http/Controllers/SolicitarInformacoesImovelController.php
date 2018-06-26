@@ -14,7 +14,7 @@ class SolicitarInformacoesImovelController extends Controller
      */
     public function index()
     {
-      $contatos = SolicitacaoInformacoesImovel::paginate();
+      $contatos = SolicitacaoInformacoesImovel::orderByDesc('id')->paginate();
       return view('admin.informacoes-imovel.index', compact('contatos'));
     }
 

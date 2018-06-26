@@ -24,7 +24,7 @@ class EncomendarImovelController extends Controller
      */
     public function index()
     {
-        $pessoas = Pessoa::where('tipo_cadastro_id', 8)->paginate();
+        $pessoas = Pessoa::where('tipo_cadastro_id', 8)->orderByDesc('id')->paginate();
 
         return view('admin.cadastros.encomendar.index', compact('pessoas'));
     }

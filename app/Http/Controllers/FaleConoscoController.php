@@ -14,7 +14,7 @@ class FaleConoscoController extends Controller
      */
     public function index()
     {
-        $contatos = FaleConosco::paginate();
+        $contatos = FaleConosco::orderByDesc('id')->paginate();
         return view('admin.faleconosco.index', compact('contatos'));
     }
 

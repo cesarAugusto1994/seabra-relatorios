@@ -14,7 +14,7 @@ class FavoritosController extends Controller
      */
     public function index()
     {
-      $contatos = Favoritos::paginate();
+      $contatos = Favoritos::orderByDesc('id')->paginate();
       return view('admin.favoritos.index', compact('contatos'));
     }
 

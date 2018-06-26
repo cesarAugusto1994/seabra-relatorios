@@ -14,7 +14,7 @@ class SolicitarInformacoesController extends Controller
      */
     public function index()
     {
-        $contatos = SolicitarInformacoes::paginate();
+        $contatos = SolicitarInformacoes::orderByDesc('id')->paginate();
         return view('admin.informacoes.index', compact('contatos'));
     }
 
