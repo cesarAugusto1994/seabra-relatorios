@@ -24,6 +24,9 @@
         <th>Telefone</th>
         <th>Mensagem</th>
         <th>Empreendimento</th>
+        <th>Observações</th>
+        <th>Adquirir Em</th>
+        <th>Unidade de Interesse</th>
         <th>Opções</th>
       </tr>
       </thead>
@@ -37,6 +40,9 @@
             <td>{{ $contato->telefone }}</td>
             <td>{{ $contato->mensagem }}</td>
             <td>{{ $contato->empreendimento_id }}</td>
+            <td>{{ $contato->observacoes }}</td>
+            <td>{{ $contato->adquirir_em }}</td>
+            <td>{{ $contato->unidade_interesse }}</td>
             <td><a data-destino="{{ url('/seo') }}" data-table="seo" href="{{ route('data_destroy', ['id' => $contato->id]) }}" class="btn btn-danger btn-xs btnRemoverRegistro2"><i class="fa fa-trash"></i> Remover</a></td>
           </tr>
           </tr>

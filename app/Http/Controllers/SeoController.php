@@ -55,7 +55,10 @@ class SeoController extends Controller
         $seo->email = $data['email'];
         $seo->ddd = $data['ddd'];
         $seo->telefone = $data['telefone'];
-        $seo->mensagem = $data['mensagem'];
+        $seo->mensagem = isset($data['mensagem']) ?? '';
+        $seo->mensagem = isset($data['observacoes']) ?? '';
+        $seo->mensagem = isset($data['adquirir_em']) ? new \DateTime($data['adquirir_em']) : null;
+        $seo->mensagem = isset($data['unidade_interesse']) ?? '';
         $seo->empreendimento_id = $data['empreendimento_id'];
         $seo->save();
 
@@ -139,13 +142,13 @@ class SeoController extends Controller
 
         $cliente = $cliente->first();
 
-        $midia = $crmConnect->table('midias')->select("*")->where('empresa_id', $cliente->id_empresa)->where('nome', 'Site')->get();
+        $midia = $crmConnect->table('midias')->select("*")->where('empresa_id', $cliente->id_empresa)->where('nome', 'Portal 123I')->get();
 
         if($midia->isEmpty()) {
 
           $midiaId = $crmConnect->table('midias')->insertGetId(
               [
-                'nome' => 'Site',
+                'nome' => 'Portal 123I',
                 'empresa_id' => $cliente->id_empresa
               ]
           );
@@ -155,6 +158,8 @@ class SeoController extends Controller
           $midiaId = $midia->first()->id;
 
         }
+
+        $mensagem = isset($data['mensagem']) ? $data['mensagem'] : '';
 
         $chamadoId = $crmConnect->table('chamado')->insertGetId(
             [
@@ -166,7 +171,7 @@ class SeoController extends Controller
               'grupo_manifestacao' => 6,
               'tipo_manifestacao' => 1,
               'id_usuario' => 1,
-              'descricao' => "Solicitação de informacoes de Imovel: ".$data['mensagem'],
+              'descricao' => "Solicitação de informacoes de Imovel: ".$mensagem,
               'classificacao' => 1,
               'area_atendimento' => 12,
               'abertura_chamado' => date('Y-m-d H:i:s'),
@@ -211,7 +216,6 @@ class SeoController extends Controller
             'email' => 'required|string|email|max:255',
             'ddd' => 'required|string',
             'telefone' => 'required|string',
-            'mensagem' => 'required|string',
             'empreendimento_id' => 'required',
         ]);
     }
